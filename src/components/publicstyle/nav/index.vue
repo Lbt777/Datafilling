@@ -64,6 +64,11 @@
 </template>
 <script>
 export default {
+  data () {
+    return {
+      item_city: [{}]// li要循环的数据 所有li以对象或者数组形式循环添加
+    }
+  }
 }
 </script>
 <style lang="less" scoped>
