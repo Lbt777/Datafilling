@@ -18,7 +18,7 @@ import sidebar from 'com/publicstyle/sidebar'
 // 底部
 import foot from 'com/publicstyle/footer'
 // axios
-import axios from 'axios'
+// import axios from 'axios'
 
 export default {
   name: 'App',
@@ -27,17 +27,16 @@ export default {
     banner,
     sidebar,
     foot
-  },
-  mounted () {
-    axios({
-      method: 'post',
-      url: '/api/EJZ/jsopnctiy_queryAllcity.action',
-      data () {}
-
-    }).then((res) => {
-      console.log(res)
-    })
-  }
+  }// ,
+  // mounted () {
+  //   axios({
+  //     method: 'post',
+  //     url: '/api/EJZ/jsopnctiy_queryAllcity.action',
+  //     data: {}
+  //   }).then((res) => {
+  //     console.log(res)
+  //   })
+  // }
 }
 </script>
 <style lang="less" scoped>

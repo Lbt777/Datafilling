@@ -51,7 +51,7 @@ import register from 'com/publicstyle/login/register'
 Vue.use(Router)
 
 export default new Router({
-  mode: 'history',
+  // mode: 'history',
   routes: [
     {
       path: '/',
