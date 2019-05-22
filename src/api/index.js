@@ -1,4 +1,4 @@
 // api地址(接口地址，保存一些公共的数据)
 // 在config中设置好配置/api
-const api = '/api/EJZ/jsopnctiy_queryAllcity.action'
+const api = '/api/EJZ/'
 export {api}
