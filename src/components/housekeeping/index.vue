@@ -7,76 +7,17 @@
     <div class="parting-line"></div>
     <div class="primary">
       <ul class="serve clearfix">
-        <li>
+          <li v-for="(nav,index) in contentdes" :key="index">
           <div class="primary-dev primary-dev01">
-            <i></i>
-            <a href="#"><h6>日常保洁</h6></a>
-            <a href="#"><p>钟点工/小时工/清洁护理</p></a>
-            <a href="#">
-              <img class="btn-prev01" src="./img/index-icon-1.png">
-              <img class="btn-prev02" src="./img/index-icon-3-1.png">
-            </a>
+          <i></i>
+          <a href="#"><h6>{{nav.hname}}</h6></a>
+          <a href="#"><p>{{nav.hdescribe}}</p></a>
+          <a href="#/housesub">
+          <img class="btn-prev01" src="./img/index-icon-1.png">
+          <img class="btn-prev02" src="./img/index-icon-3-1.png">
+          </a>
           </div>
-        </li>
-        <li>
-          <div class="primary-dev">
-            <i></i>
-            <a href="#"><h6>日常保洁</h6></a>
-            <a href="#"><p>钟点工/小时工/清洁护理</p></a>
-            <a href="#">
-              <img class="btn-prev01" src="./img/index-icon-1.png">
-              <img class="btn-prev02" src="./img/index-icon-3-1.png">
-            </a>
-          </div>
-        </li>
-      </ul>
-      <ul class="serve server-ul01 clearfix">
-        <li>
-          <div class="primary-dev">
-            <i></i>
-            <a href="#"><h6>日常保洁</h6></a>
-            <a href="#"><p>钟点工/小时工/清洁护理</p></a>
-            <a href="#">
-              <img class="btn-prev01" src="./img/index-icon-1.png">
-              <img class="btn-prev02" src="./img/index-icon-3-1.png">
-            </a>
-          </div>
-        </li>
-        <li>
-          <div class="primary-dev">
-            <i></i>
-            <a href="#"><h6>日常保洁</h6></a>
-            <a href="#"><p>钟点工/小时工/清洁护理</p></a>
-            <a href="#">
-              <img class="btn-prev01" src="./img/index-icon-1.png">
-              <img class="btn-prev02" src="./img/index-icon-3-1.png">
-            </a>
-          </div>
-        </li>
-      </ul>
-      <ul class="serve server-ul01 clearfix">
-        <li>
-          <div class="primary-dev">
-            <i></i>
-            <a href="#"><h6>日常保洁</h6></a>
-            <a href="#"><p>钟点工/小时工/清洁护理</p></a>
-            <a href="#">
-              <img class="btn-prev01" src="./img/index-icon-1.png">
-              <img class="btn-prev02" src="./img/index-icon-3-1.png">
-            </a>
-          </div>
-        </li>
-        <li>
-          <div class="primary-dev">
-            <i></i>
-            <a href="#"><h6>日常保洁</h6></a>
-            <a href="#"><p>钟点工/小时工/清洁护理</p></a>
-            <a href="#">
-              <img class="btn-prev01" src="./img/index-icon-1.png">
-              <img class="btn-prev02" src="./img/index-icon-3-1.png">
-            </a>
-          </div>
-        </li>
+          </li>
       </ul>
     </div>
     <copyright/>
@@ -85,10 +26,28 @@
 <script>
 // 侧边
 import copyright from 'com/publicstyle/copyright'
+import {housekeep} from 'api/request'
 export default {
   components: {
     copyright
+  },
+  data () {
+    return {
+      // 创建空数组保存data
+      contentdes: []
+    }
+  },
+  mounted () {
+    // 获取城市数据
+    housekeep((data) => {
+      // 保存到空数组中
+      console.log('打印')
+      this.contentdes = data[0].data
+      console.log(this.contentdes)
+      console.log('打印')
+    })
   }
+
 }
 </script>
 <style lang="less" scoped>
@@ -139,12 +98,13 @@ export default {
     }
   }
   .serve{
-    padding: 70px 0px 0px 0px;
+    padding:55px 0px 0px 0px;
   }
-  .server-ul02{
-    margin-top: 100px;
-  }
-  .container .primary ul li i{
+ .container .primary .serve li {
+    margin-top: 60px;
+ }
+
+ .container .primary ul li i{
     display: block;
     width: 45px;
     height: 2px;
