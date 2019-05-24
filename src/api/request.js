@@ -9,5 +9,45 @@ let postlist = function (fn) {
     console.log('已调用回调函数fn')
   })
 }
+let housekeep = function (fn) {
+  // 传入三个参数
+  sendaxios('post', 'House_query.action').then((res) => {
+    // 请求成功后调用回调函数
+    fn(res)
+    console.log('已调用回调函数fn')
+  })
+}
+let maternity = function (fn) {
+  // 传入三个参数
+  sendaxios('post', 'PI_yuesaoServe.action', {'yuesao_id': 1}).then((res) => {
+    // 请求成功后调用回调函数
+    fn(res)
+    console.log('已调用回调函数fn')
+  })
+}
+let maternityinfo = function (fn) {
+  // 传入三个参数
+  sendaxios('post', 'PI_yuesaoEmp.action', {'employee_gid': 3}).then((res) => {
+    // 请求成功后调用回调函数
+    fn(res)
+    console.log('已调用回调函数fn')
+  })
+}
+let lactation = function (fn) {
+  // 传入三个参数
+  sendaxios('post', 'CUI_cuirushiServe.action', {'cuirushi_id': 1}).then((res) => {
+    // 请求成功后调用回调函数
+    fn(res)
+    console.log('已调用回调函数fn')
+  })
+}
+let lactationinfo = function (fn) {
+  // 传入三个参数
+  sendaxios('post', 'CUI_cuirushiEmp.action', {'employee_gid': 1}).then((res) => {
+    // 请求成功后调用回调函数
+    fn(res)
+    console.log('已调用回调函数fn')
+  })
+}
 // 导出postlist方法
-export {postlist}
+export {postlist, housekeep, maternity, maternityinfo, lactation, lactationinfo}
