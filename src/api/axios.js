@@ -3,6 +3,7 @@
 
 import axios from 'axios'
 import {api} from './index'
+import qs from 'qs'
 
 /* axios封装ajax请求 使用promise再次封装 */
 /* methods 请求方法post，get */
@@ -15,7 +16,7 @@ function sendaxios (methods = 'post', url, data = {}) {
     axios({
       methods: methods,
       url: api + url,
-      data: data
+      data: qs.stringify(data)
     }).then((res) => {
       // 请求成功
       // eslint-disable-next-line eqeqeq
@@ -24,7 +25,7 @@ function sendaxios (methods = 'post', url, data = {}) {
       } else {
         alert('请求失败')
       }
-      console.log('返回的待处理数据,', res)
+      // console.log('返回的待处理数据,', res)
     }).catch((res) => {
       console.log('error')
     })
