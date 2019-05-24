@@ -9,5 +9,45 @@ let postlist = function (fn) {
     console.log('已调用回调函数fn')
   })
 }
+let nanny = function (fn) {
+  // 传入三个参数
+  sendaxios('post', 'frnanny_Content.action?nanny_id=1').then((res) => {
+    // 请求成功后调用回调函数
+    fn(res)
+    console.log('已调用回调函数fn')
+  })
+}
+let parenting = function (fn) {
+  // 传入三个参数
+  sendaxios('post', 'reyuersao_Content.action?yuersao_id=2').then((res) => {
+    // 请求成功后调用回调函数
+    fn(res)
+    console.log('已调用回调函数fn')
+  })
+}
+let subtab = function (fn) {
+  // 传入三个参数
+  sendaxios('post', '/jsopnpic_queryImg.action').then((res) => {
+    // 请求成功后调用回调函数
+    fn(res)
+    console.log('已调用回调函数fn')
+  })
+}
+let tab = function (fn) {
+  // 传入三个参数
+  sendaxios('post', 'jsopnpic_queryImg.action').then((res) => {
+    // 请求成功后调用回调函数
+    fn(res)
+    console.log('已调用回调函数fn')
+  })
+}
+let tabs = function (fn) {
+  // 传入三个参数
+  sendaxios('post', 'jsopnpic_queryImg.action').then((res) => {
+    // 请求成功后调用回调函数
+    fn(res)
+    console.log('已调用回调函数fn')
+  })
+}
 // 导出postlist方法
-export {postlist}
+export {postlist, nanny, parenting, subtab, tab, tabs}

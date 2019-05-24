@@ -70,7 +70,7 @@ export default {
     // 获取城市数据
     postlist((data) => {
       // 保存到空数组中
-      // console.log(data)
+//       console.log(data)
       this.item_city = data[0].data
       console.log('优化后的数据', this.item_city)
     })
