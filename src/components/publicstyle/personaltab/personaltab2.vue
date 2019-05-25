@@ -33,7 +33,7 @@
 <script>
 import VDistpicker from 'v-distpicker'
 import {api} from 'api/index'
-import {tabs} from 'api/request'
+// import {tabs} from 'api/request'
 export default {
   components: { VDistpicker },
   data () {
@@ -61,13 +61,12 @@ export default {
     }
   },
   mounted () {
-    // 获取城市数据
-    tabs((data) => {
-      // 保存到空数组中
-      // console.log(data)
-      this.img3 = data.img3
-      console.log(data)
-    })
+    // tabs((data) => {
+    //   // 保存到空数组中
+    //   // console.log(data)
+    //   this.img3 = data.img3
+    //   console.log(data)
+    // })
   },
   methods: {
     submitForm (formName) {

@@ -67,33 +67,44 @@ export default {
   },
   methods: {
     submitForm (ruleForm) {
-      console.log(this.ruleForm)
+      // 手机
+      // let phone = this.ruleForm.phone
+      // 密码
+      // let pwd = this.ruleForm.pass
+      // 图片验证
+      let pic = this.ruleForm.msg
+      // if (phone !== '' && pwd !== '' && pic === '验证成功') {
+      //   console.log(111)
+      // }
       this.$refs[ruleForm].validate((valid) => {
-        if (valid) {
+        if (pic === '') {
+          alert('请尝试滑动验证码')
+        }
+        if (valid && pic === '验证成功') {
           denglu({
             'useruphone': this.ruleForm.phone,
             'userupassword': this.ruleForm.pass
           }, (res) => {
             console.log(res)
+            alert(res.message)
+            // 跳转到首页
+            if (res.success === true) {
+              this.$router.push({path: '/'})
+            }
           })
-          alert('submit!')
         } else {
-          console.log('error submit!!')
           return false
         }
       })
     },
     onSuccess () {
       this.ruleForm.msg = '验证成功'
-      console.log(111)
     },
     onFail () {
       this.ruleForm.msg = '验证失败，请重新验证'
-      return 2
     },
     onRefresh () {
       this.ruleForm.msg = '已刷新'
-      return 3
     }
   }
 }

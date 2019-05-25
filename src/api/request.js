@@ -72,4 +72,4 @@ let denglu = function (data, fn) {
   })
 }
 // 导出postlist方法
-export {nav, postlist, information, service, characteristic, adv, register, sendphone, denglu}
+export {nav, postlist, information, service, characteristic, adv, sendphone, register, denglu}

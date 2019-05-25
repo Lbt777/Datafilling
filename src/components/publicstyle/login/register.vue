@@ -31,7 +31,7 @@
             </el-form-item>
           </div>
           <el-form-item>
-            <el-button type="primary" @click="submitForm('ruleForm')">提交</el-button>
+            <el-button type="primary" @click="submitForm('ruleForm')">注册</el-button>
           </el-form-item>
           <router-link to="/logon">返回登录</router-link>
       </el-form>
@@ -41,7 +41,7 @@
 // md5 加密
 import {calcumd5} from 'api/index'
 // 注册发送axios
-import {register, sendphone} from 'api/request'
+import {sendphone, register} from 'api/request'
 export default {
   data () {
     var phone = (rule, value, callback) => {
@@ -113,15 +113,15 @@ export default {
   methods: {
     getAuthCode (formName) {
       let val = this.ruleForm.phone
-      console.log(val)
+      // console.log(val)
       if (val === '') {
         alert('请先输入手机号')
         return
       } else {
         sendphone({
-          'user_uphone': val
+          useruphone: val
         }, (res) => {
-          console.log('验证码发送成功')
+          alert(res.message)
         })
       }
       this.sendAuthCode = false
@@ -137,17 +137,16 @@ export default {
     submitForm (formName) {
       this.$refs[formName].validate((valid) => {
         if (valid) {
-          console.log(this.ruleForm.phone)
-          console.log(this.ruleForm.pass)
           register({
-            user_uphone: this.ruleForm.phone,
-            user_upassword: calcumd5(this.ruleForm.pass),
+            useruphone: this.ruleForm.phone,
+            userupassword: calcumd5(this.ruleForm.pass),
             user_code: this.ruleForm.code
           }, (res) => {
-            console.log(res)
-            alert('注册成功')
+            alert(res.message)
             // 跳转到登录
-            this.$router.push({path: '/logon'})
+            if (res.success === true) {
+              this.$router.push({path: '/logon'})
+            }
           })
         } else {
           console.log('error submit!!')
