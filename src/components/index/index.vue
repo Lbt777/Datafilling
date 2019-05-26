@@ -9,11 +9,11 @@
                 <i></i>
             </div>
             <ul class="sort">
-                <li>
+                <li v-for="(item,index) in item_service" :key='index'>
                     <div class="imgs">
                         <div class="sm-title">
-                            <p>月嫂</p>
-                            <span>专业护理师</span>
+                            <p>{{item.hname}}</p>
+                            <span>{{item.hdescribe}}</span>
                         </div>
                         <div class="shade">
                             <router-link to="/subscribe">立即预约</router-link>
@@ -21,7 +21,7 @@
                         <img src="./img/home-working-bg1.png">
                     </div>
                 </li>
-                <li>
+                <!-- <li>
                     <div class="imgs">
                         <div class="sm-title">
                             <p>育婴育儿</p>
@@ -128,7 +128,7 @@
                         </div>
                         <img src="./img/home-working-bg3.png">
                     </div>
-                </li>
+                </li> -->
             </ul>
         </div>
         <div class="title">
@@ -139,7 +139,25 @@
         <div class="carousel container">
             <div class="slide">
                 <ul>
-                    <li>
+                    <li v-for="(item,index) in item_adv" :key="index">
+                        <div class="slide-box">
+                            <img :src="api + item.address"/>
+                            <div class="layer">
+                                <img class="sys-icon" src="./img/six-sys-icon.png">
+                                <div class="layer-up">
+                                    <div class="layer-img">
+                                        <img src="./img/six-sys-hover1.png">
+                                    </div>
+                                    <h1>{{item.title}}</h1>
+                                    <p>{{item.englishtitle}}</p>
+                                </div>
+                                <div class="layer-down">
+                                    <p>{{item.describe}}</p>
+                                </div>
+                            </div>
+                        </div>
+                    </li>
+                    <!-- <li>
                         <div class="slide-box">
                             <img src="./img/six-sys1.jpg">
                             <div class="layer">
@@ -233,26 +251,7 @@
                                 </div>
                             </div>
                         </div>
-                    </li>
-                    <li>
-                        <div class="slide-box">
-                            <img src="./img/six-sys1.jpg">
-                            <div class="layer">
-                                <img class="sys-icon" src="./img/six-sys-icon.png">
-                                <div class="layer-up">
-                                    <div class="layer-img">
-                                        <img src="./img/six-sys-hover1.png">
-                                    </div>
-                                    <h1>实名认证</h1>
-                                    <p>Real-name authentication</p>
-                                </div>
-                                <div class="layer-down">
-                                    <p>实名认证、严格筛选，</p>
-                                    <p>彼此了解和交流、让您更安心</p>
-                                </div>
-                            </div>
-                        </div>
-                    </li>
+                    </li> -->
                 </ul>
             </div>
         </div>
@@ -271,11 +270,11 @@
         </div>
         <div class="main-content">
             <ul>
-                <li>
+                <li v-for="(item,index) in item_characteristic" :key='index'>
                     <img src="./img/spe-serv1.png">
-                    <p class="font-20">月嫂</p>
+                    <p class="font-20">{{item.gname}}</p>
                 </li>
-                <li>
+                <!-- <li>
                     <img src="./img/spe-serv2.png">
                     <p class="font-20">保姆</p>
                 </li>
@@ -286,7 +285,7 @@
                 <li>
                     <img src="./img/spe-serv4.png">
                     <p class="font-20">催乳师</p>
-                </li>
+                </li> -->
             </ul>
         </div>
         <div class="title ejia">
@@ -328,7 +327,25 @@
         </div>
         <div class="container information">
             <ul>
-                <li>
+                <li v-for="(item,index) in item_information" :key='index'>
+                    <img src="./img/infor (1).jpg">
+                    <div class="new">
+                        <h2>行业新闻</h2>
+                        <dir class="more new-more">More</dir>
+                    </div>
+                    <div class="new-down">
+                        <p>
+                            <a href="">{{item.atitle}}</a>
+                        </p>
+                        <p>
+                            <a href="">保姆与雇主能否成为“一家人”</a>
+                        </p>
+                        <p>
+                            <a href="">应该如何和保姆融洽相处</a>
+                        </p>
+                    </div>
+                </li>
+                <!-- <li>
                     <img src="./img/infor (1).jpg">
                     <div class="new">
                         <h2>行业新闻</h2>
@@ -363,31 +380,39 @@
                             <a href="">应该如何和保姆融洽相处</a>
                         </p>
                     </div>
-                </li>
-                <li>
-                    <img src="./img/infor (1).jpg">
-                    <div class="new">
-                        <h2>行业新闻</h2>
-                        <dir class="more new-more">More</dir>
-                    </div>
-                    <div class="new-down">
-                        <p>
-                            <a href="">“贴心”保姆感动雇主</a>
-                        </p>
-                        <p>
-                            <a href="">保姆与雇主能否成为“一家人”</a>
-                        </p>
-                        <p>
-                            <a href="">应该如何和保姆融洽相处</a>
-                        </p>
-                    </div>
-                </li>
+                </li> -->
             </ul>
         </div>
     </div>
 </template>
 <script>
+import {api} from 'api/index'
+import {information, service, characteristic, adv} from 'api/request'
 export default {
+  data () {
+    return {
+      item_information: [],
+      item_service: [],
+      item_characteristic: [],
+      item_adv: [],
+      api
+    }
+  },
+  mounted () {
+    information((data) => {
+      this.item_information = data[0].data
+    })
+    service((data) => {
+      this.item_service = data[0].data
+    })
+    characteristic((data) => {
+      this.item_characteristic = data
+    })
+    adv((data) => {
+      this.item_adv = data.data
+      console.log(this.item_adv)
+    })
+  }
 }
 </script>
 <style lang="less" scoped>

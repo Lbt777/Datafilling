@@ -102,8 +102,6 @@ export default {
 }
 .tab{
     width: 100%;
-    /*border: 1px solid #ccc;*/
-    padding-top: 30px;
     padding-bottom: 20px;
 }
 .site{

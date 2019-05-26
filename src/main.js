@@ -6,8 +6,12 @@ import router from './router'
 import Element from 'element-ui'
 import 'element-ui/lib/theme-chalk/index.css'
 import SlideVerify from 'vue-monoplasty-slide-verify'
+// import axios from 'axios'
 Vue.use(SlideVerify)
 Vue.use(Element)
+// Vue.prototype.$axios = axios
+// Vue.defaults.baseUrl = 'http://88ja9g.natappfree.cc'
+
 // 修改标题
 router.beforeEach((to, from, next) => {
   if (to.meta.title) {

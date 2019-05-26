@@ -19,8 +19,32 @@
         </div>
         <div class="item">
             <ul>
-                <li v-for="(item,j) in item_nav" :key="j">
-                    <router-link :to="item.url">{{item.nav}}</router-link>
+                <li>
+                    <router-link to="/">首页</router-link>
+                </li>
+                <li>
+                    <router-link to="/housekeeping">家政</router-link>
+                </li>
+                <li>
+                    <router-link to="/maternity">月嫂</router-link>
+                </li>
+                <li>
+                    <router-link to="/lactation">催乳师</router-link>
+                </li>
+                <li>
+                    <router-link to="/parenting">育儿嫂</router-link>
+                </li>
+                <li>
+                    <router-link to="/nanny">保姆</router-link>
+                </li>
+                <li>
+                    <router-link to="/cooperation">城市合作</router-link>
+                </li>
+                <li>
+                    <router-link to="/personal">个人中心</router-link>
+                </li>
+                <li>
+                    <router-link to="/logon">请登录</router-link>
                 </li>
             </ul>
         </div>
@@ -28,7 +52,7 @@
 </template>
 <script>
 // 导入postlist方法
-import {postlist} from 'api/request'
+import {postlist, nav} from 'api/request'
 export default {
   data () {
     return {
@@ -62,7 +86,6 @@ export default {
     city (e) {
       let city1 = e.target.innerHTML
       let city2 = this.$refs.citys
-      //   console.log(city2)
       city2.innerHTML = city1
     }
   },
@@ -70,9 +93,28 @@ export default {
     // 获取城市数据
     postlist((data) => {
       // 保存到空数组中
-//       console.log(data)
+      console.log(data)
       this.item_city = data[0].data
       console.log('优化后的数据', this.item_city)
+      //console.log(data)    })
+    nav((data) => {
+      // let navlink = [{url: '/'},
+      //   {url: '/housekeeping'},
+      //   {url: '/maternity'},
+      //   {url: '/lactation'},
+      //   {url: '/parenting'},
+      //   {url: '/nanny'},
+      //   {url: '/cooperation'},
+      //   {url: '/personal'},
+      //   {url: '/logon'}]
+      // console.log(data)
+      let login = [{gname: '个人中心'},
+        {gname: '请登录'}]
+      this.item_nav = data[0].data
+      for (let i = 0; i < login.length; i++) {
+        this.item_nav.push(login[i])
+      }
+      // console.log(this.item_nav)
     })
   }
 }

@@ -186,10 +186,32 @@
     </div>
   </div>
 </template>
-<script>
+<script>import {api} from 'api/index'
+// import {maternity, maternityinfo} from 'api/request'
 export default {
+  data () {
+    return {
+      api,
+      yuersao: [],
+      nurseinfos: []
+    }
+  },
   mounted () {
     window.addEventListener('scroll', this.handleScroll)
+    // maternity((data) => {
+    //   // 保存到空数组中
+    //   console.log('打印1')
+    //   console.log(data.paddress)
+    //   this.yuersao = data.paddress
+    //   console.log('打印2')
+    // })
+    // maternityinfo((data) => {
+    //   // 保存到空数组中
+    //   console.log('data1')
+    //   this.nurseinfos = data.data
+    //   console.log(this.nurseinfos)
+    //   console.log('data2')
+    // })
   },
   methods: {
     handleScroll () {

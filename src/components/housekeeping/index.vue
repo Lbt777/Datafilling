@@ -85,9 +85,25 @@
 <script>
 // 侧边
 import copyright from 'com/publicstyle/copyright'
+import {housekeep} from 'api/request'
 export default {
   components: {
     copyright
+  },
+  data () {
+    return {
+      // 创建空数组保存data
+      contentdes: []
+    }
+  },
+  mounted () {
+    // housekeep((data) => {
+    //   // 保存到空数组中
+    //   console.log('打印')
+    //   this.contentdes = data[0].data
+    //   console.log(this.contentdes)
+    //   console.log('打印')
+    // })
   }
 }
 </script>

@@ -230,7 +230,7 @@
 // 侧边
 import {api} from 'api/index'
 import copyright from 'com/publicstyle/copyright'
-import {nanny} from 'api/request'
+// import {nanny} from 'api/request'
 export default {
   data () {
     return {
@@ -255,11 +255,11 @@ export default {
   },
   mounted () {
     // 获取城市数据
-    nanny((data) => {
-      // 保存到空数组中
-      // console.log(data)
-      this.img = data.img
-    })
+    // nanny((data) => {
+    //   // 保存到空数组中
+    //   // console.log(data)
+    //   this.img = data.img
+    // })
   }
 }
 </script>

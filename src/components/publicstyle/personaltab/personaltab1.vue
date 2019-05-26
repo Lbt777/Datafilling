@@ -42,6 +42,8 @@
 </template>
 <script>
 import VDistpicker from 'v-distpicker'
+import {api} from 'api/index'
+// import {tab} from 'api/request'
 export default {
   components: { VDistpicker },
   data () {
@@ -101,6 +103,14 @@ export default {
         area: ' 区 '
       }
     }
+  },
+  mounted () {
+    // tab((data) => {
+    //   // 保存到空数组中
+    //   // console.log(data)
+    //   this.img2 = data.img2
+    //   console.log(data)
+    // })
   },
   methods: {
     submitForm (formName) {
