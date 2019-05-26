@@ -1,6 +1,7 @@
 // 所有请求放到这个文件中导出
 // 存放发送请求的方法
 import sendaxios from './axios'
+import store from '../store'
 // 顶部导航与banner
 let nav = function (fn) {
   // 传入三个参数
@@ -20,31 +21,21 @@ let postlist = function (fn) {
 // 首页行业资讯类型与描述字段
 let information = function (fn) {
   // 传入三个参数
-  sendaxios('post', 'frnanny_Content.action?nanny_id=1').then((res) => {
-  sendaxios('post', 'House_query.action').then((res) => {    // 请求成功后调用回调函数
+  sendaxios('post', 'jsopnart_query.action').then((res) => {
     fn(res)
   })
 }
 // 首页家政服务类型
 let service = function (fn) {
   // 传入三个参数
-  sendaxios('post', 'reyuersao_Content.action?yuersao_id=2').then((res) => {
-  sendaxios('post', 'PI_yuesaoServe.action', {'yuesao_id': 1}).then((res) => {    // 请求成功后调用回调函数
+  sendaxios('post', 'jsopnhouse_query.action').then((res) => { // 请求成功后调用回调函数
     fn(res)
   })
 }
-  sendaxios('post', '/jsopnpic_queryImg.action').then((res) => {
-  sendaxios('post', 'PI_yuesaoEmp.action', {'employee_gid': 3}).then((res) => {
-}
-  sendaxios('post', 'jsopnpic_queryImg.action').then((res) => {
-  sendaxios('post', 'CUI_cuirushiServe.action', {'cuirushi_id': 1}).then((res) => {
-}
-  sendaxios('post', 'jsopnpic_queryImg.action').then((res) => {
-  sendaxios('post', 'CUI_cuirushiEmp.action', {'employee_gid': 1}).then((res) => {
 // 首页特色服务类型
 let characteristic = function (fn) {
   // 传入三个参数
-  sendaxios('post', 'jsopngen_queryTs.action').then((res) => {
+  sendaxios('post', 'jsopnhouse_query.action').then((res) => {
     // 请求成功后调用回调函数
     fn(res)
   })
@@ -55,6 +46,24 @@ let adv = function (fn) {
   sendaxios('post', 'jsopnadv_query.action').then((res) => {
     // 请求成功后调用回调函数
     fn(res)
+  })
+}
+// 保姆
+let nanny = function (fn) {
+  // 传入三个参数
+  sendaxios('post', 'frnanny_Content.action?nanny_id=1').then((res) => {
+    // 请求成功后调用回调函数
+    fn(res)
+    console.log('已调用回调函数fn')
+  })
+}
+// 育儿嫂
+let parenting = function (fn) {
+  // 传入三个参数
+  sendaxios('post', 'reyuersao_Content.action?yuersao_id=2').then((res) => {
+    // 请求成功后调用回调函数
+    fn(res)
+    console.log('已调用回调函数fn')
   })
 }
 // 注册
@@ -79,7 +88,17 @@ let denglu = function (data, fn) {
     fn(res)
   })
 }
+// 刷新判断是否登录
+function loging () {
+  // 1.请求后台判断是否登录
+  // 2.已登录 后台返回登录信息和token
+  // 3.将返回的信息存储到localstorage中
+  var telphone = window.localStorage.getItem('user')
+  telphone = JSON.parse(telphone)
+  console.log(telphone)
+  var token = window.localStorage.getItem('token')
+  store.commit('userInfor', token, telphone)
+  console.log(store.state)
+}
 // 导出postlist方法
-export {postlist, nanny, parenting, subtab, tab, tabs}
-export {postlist, housekeep, maternity, maternityinfo, lactation, lactationinfo}
-export {nav, postlist, information, service, characteristic, adv, sendphone, register, denglu}
+export {nav, postlist, information, service, characteristic, adv, sendphone, register, denglu, nanny, parenting, loging}

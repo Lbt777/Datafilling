@@ -42,8 +42,6 @@
 </template>
 <script>
 import VDistpicker from 'v-distpicker'
-import {api} from 'api/index'
-// import {tab} from 'api/request'
 export default {
   components: { VDistpicker },
   data () {
@@ -104,14 +102,6 @@ export default {
       }
     }
   },
-  mounted () {
-    // tab((data) => {
-    //   // 保存到空数组中
-    //   // console.log(data)
-    //   this.img2 = data.img2
-    //   console.log(data)
-    // })
-  },
   methods: {
     submitForm (formName) {
       this.$refs[formName].validate((valid) => {
@@ -130,82 +120,82 @@ export default {
   }
 }
 </script>
-  <style lang="less" scoped>
-  @import '~@/static/css/common.less';
-  .personal-b-r-t{
-    padding: 30px 50px ;
-    background: @whiteColor;
-  p{
-    margin-bottom: 30px;
-  }
-  }
-  /deep/.el-form-item__content{
-    display: inline-block;
-  }
-  /deep/.el-input__inner{
-    margin-left: 20px;
-  }
-  /deep/.el-form-item__error{
-    margin-left: 20px;
-  }
-  p{
-    margin-bottom: 30px;
-  }
-  /deep/.el-form-item{
-    margin-bottom: 20px;
-  }
-  .el-select-dropdown .el-select-dropdown__item{
-    float: none;
-    padding: 6px 20px;
-  }
-  /deep/.personal-b[data-v-70335cd3] .el-input__inner {
-    margin-left: 0;
-  }
-  .distpicker-address-wrapper{
-    display: inline-block;
-    margin-left: 15px;
-    margin-bottom: 30px;
-  }
-  /deep/ .el-form-item__content{
-    width: 50%;
-  }
+<style lang="less" scoped>
+@import '~@/static/css/common.less';
+.personal-b-r-t{
+  padding: 30px 50px ;
+  background: @whiteColor;
+p{
+  margin-bottom: 30px;
+}
+}
+/deep/.el-form-item__content{
+  display: inline-block;
+}
+/deep/.el-input__inner{
+  margin-left: 20px;
+}
+/deep/.el-form-item__error{
+  margin-left: 20px;
+}
+p{
+  margin-bottom: 30px;
+}
+/deep/.el-form-item{
+  margin-bottom: 20px;
+}
+.el-select-dropdown .el-select-dropdown__item{
+  float: none;
+  padding: 6px 20px;
+}
+/deep/.personal-b[data-v-70335cd3] .el-input__inner {
+  margin-left: 0;
+}
+.distpicker-address-wrapper{
+  display: inline-block;
+  margin-left: 15px;
+  margin-bottom: 30px;
+}
+/deep/ .el-form-item__content{
+  width: 50%;
+}
 
-  .el-col.el-col-11{
-    width: 100%;
-  }
-  /deep/.el-button--primary:focus, .el-button--primary:hover {
-    width: 100px;
-    background: #66b1ff;
-    border-color: #66b1ff;
-    color: #FFF;
-    line-height: 40px;
-  }
-  .el-button--primary{
-    width: 100px;
-    background: #66b1ff;
-    border-color: #66b1ff;
-    color: #FFF;
-    line-height: 40px;
-  }
-  .el-button--primary.is-active, .el-button--primary:active{
-    width: 100px;
-    background: #66b1ff;
-    border-color: #66b1ff;
-    color: #FFF;
-    line-height: 40px;
-  }
-  /deep/.el-input__icon {
-    width: 50px;
-  }
-  /deep/.el-form-item__label{
-    width: 100px;
-    text-align: left;
-  }
-  .p-input{
-    display: inline-block;
-    width: 100px;
-  }
-  .el-textarea{
-    margin-left: 20px;
-  }
+.el-col.el-col-11{
+  width: 100%;
+}
+/deep/.el-button--primary:focus, .el-button--primary:hover {
+  width: 100px;
+  background: #66b1ff;
+  border-color: #66b1ff;
+  color: #FFF;
+  line-height: 40px;
+}
+.el-button--primary{
+  width: 100px;
+  background: #66b1ff;
+  border-color: #66b1ff;
+  color: #FFF;
+  line-height: 40px;
+}
+.el-button--primary.is-active, .el-button--primary:active{
+  width: 100px;
+  background: #66b1ff;
+  border-color: #66b1ff;
+  color: #FFF;
+  line-height: 40px;
+}
+/deep/.el-input__icon {
+  width: 50px;
+}
+/deep/.el-form-item__label{
+  width: 100px;
+  text-align: left;
+}
+.p-input{
+  display: inline-block;
+  width: 100px;
+}
+.el-textarea{
+  margin-left: 20px;
+}
 </style>

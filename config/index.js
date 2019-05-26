@@ -12,9 +12,7 @@ module.exports = {
     assetsPublicPath: '',
     proxyTable: {
       '/api': {
-        target: 'http://88ja9g.natappfree.cc/EJZ/',// 目标接口
-        target: 'http://88ja9g.natappfree.cc',// 目标接口
-        target: 'http://huangchuan.natapp1.cc/EJZ',//  目标接口
+        target: 'http://huangchuan.natapp1.cc',// 目标接口
         changeOrigin: true,
         pathRewrite: {// 地址重写
           '^/api': ''

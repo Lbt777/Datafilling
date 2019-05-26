@@ -23,8 +23,6 @@
 </template>
 <script>
 import VDistpicker from 'v-distpicker'
-import {api} from 'api/index'
-// import {tabs} from 'api/request'
 export default {
   components: { VDistpicker },
   data () {
@@ -40,7 +38,7 @@ export default {
           return callback(new Error('请输入正确的手机号'))
         }
       }
-    };
+    }
     return {
       ruleForm: {
         name: '',
@@ -63,14 +61,6 @@ export default {
         ]
       }
     }
-  },
-  mounted () {
-    // tabs((data) => {
-    //   // 保存到空数组中
-    //   // console.log(data)
-    //   this.img3 = data.img3
-    //   console.log(data)
-    // })
   },
   methods: {
     submitForm (formName) {
