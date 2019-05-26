@@ -60,16 +60,28 @@ export default {
       show: true,
       // 创建空数组保存data
       item_city: [],
-      item_nav: []
-      // item_nav: [{url: '/', nav: '首页'},
-      //   {url: '/housekeeping', nav: '家政'},
-      //   {url: '/maternity', nav: '月嫂'},
-      //   {url: '/lactation', nav: '催乳师'},
-      //   {url: '/parenting', nav: '育儿嫂'},
-      //   {url: '/nanny', nav: '保姆'},
-      //   {url: '/cooperation', nav: '城市合作'},
-      //   {url: '/personal', nav: '个人中心'},
-      //   {url: '/logon', nav: '请登录'}]
+      //   item_city: [{citys: '北京市'},
+      //     {citys: '上海市'},
+      //     {citys: '深圳市'},
+      //     {citys: '南京市'},
+      //     {citys: '杭州市'},
+      //     {citys: '长沙市'},
+      //     {citys: '沈阳市'},
+      //     {citys: '合肥市'},
+      //     {citys: '哈尔滨市'},
+      //     {citys: '苏州市'},
+      //     {citys: '无锡市'},
+      //     {citys: '常州市'},
+      //     {citys: '青岛市'}],
+      item_nav: [{url: '/', nav: '首页'},
+        {url: '/housekeeping', nav: '家政'},
+        {url: '/maternity', nav: '月嫂'},
+        {url: '/lactation', nav: '催乳师'},
+        {url: '/parenting', nav: '育儿嫂'},
+        {url: '/nanny', nav: '保姆'},
+        {url: '/cooperation', nav: '城市合作'},
+        {url: '/personal', nav: '个人中心'},
+        {url: '/logon', nav: '请登录'}]
     }
   },
   methods: {
@@ -90,8 +102,8 @@ export default {
       console.log(data)
       this.$router.push({path: '/'})
       this.item_city = data[0].data
-      // console.log('优化后的数据', this.item_city)
-    })
+      console.log('优化后的数据', this.item_city)
+      //console.log(data)    })
     nav((data) => {
       // let navlink = [{url: '/'},
       //   {url: '/housekeeping'},

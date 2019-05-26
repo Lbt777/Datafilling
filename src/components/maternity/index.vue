@@ -1,185 +1,183 @@
 <template>
   <div class="container clearfix">
     <div class="primary">
-      <!--<div class="month-nurse-module01 clearfix">-->
-        <!--<ul>-->
-          <!--<li class="li1">-->
-            <!--<div class="li1-hover">-->
-              <!--<br>-->
-              <!--面试严格-->
-              <!--<br>-->
-              <!--系统培训-->
-              <!--<br>-->
-              <!--标准化服务-->
-            <!--</div>-->
-          <!--</li>-->
-          <!--<li class="li2">-->
-            <!--<div class="li1-hover">-->
-              <!--<br>-->
-              <!--月嫂保险-->
-              <!--<br>-->
-              <!--人身体检-->
-              <!--<br>-->
-              <!--规范性工作-->
-            <!--</div>-->
-          <!--</li>-->
-          <!--<li class="li3">-->
-            <!--<div class="li1-hover">-->
-              <!--<br>-->
-              <!--持证上岗-->
-              <!--<br>-->
-              <!--权威认证-->
-              <!--<br>-->
-              <!--专业化保障-->
-            <!--</div>-->
-          <!--</li>-->
-        <!--</ul>-->
-        <!--<div class="nurse-btn">月嫂在线带人</div>-->
-        <!--<P>月嫂是母婴护理师的俗称，主要是专业护理产妇与新生儿，服务的内容以月子护理为主，新生儿的护理占80%，产妇的护理占20%。月嫂属于高级家政人员，不同于一般的家政护理员。</P>-->
-      <!--</div>-->
-      <!--<div class="fenge-line01"></div>-->
-      <!--<div class="title">-->
-        <!--<h2>服务介绍</h2>-->
-        <!--<i></i>-->
-        <!--<p>专业月嫂，呵护宝宝</p>-->
-      <!--</div>-->
-     <!--<ul class="month-nurse-module02">-->
-       <!--<li>-->
-         <!--<i >01</i>-->
-         <!--<h6 class="pub-color-blue">但偏偏雨渐渐</h6>-->
-         <!--<p class="title-p">指导正确哺乳  喂养、呵护、洗澡 穿衣、换洗尿布 物品消毒 </p>-->
-       <!--</li>-->
-       <!--<li>-->
-         <!--<i class="pub-color01">02</i>-->
-         <!--<h6 class="pub-color-wred">但偏偏雨渐渐</h6>-->
-         <!--<p>还有多久才能陪在你身边，但故事的最后，你还是说了拜拜</p>-->
-       <!--</li>-->
-       <!--<li>-->
-         <!--<i>03</i>-->
-         <!--<h6 class="pub-color-blue">但偏偏雨渐渐</h6>-->
-         <!--<p>还有多久才能陪在你身边，但故事的最后，你还是说了拜拜</p>-->
-       <!--</li>-->
-       <!--<li>-->
-         <!--<i class="pub-color01">04</i>-->
-         <!--<h6 class="pub-color-wred">但偏偏雨渐渐</h6>-->
-         <!--<p>还有多久才能陪在你身边，但故事的最后，你还是说了拜拜</p>-->
-       <!--</li>-->
-       <!--<li>-->
-         <!--<i>05</i>-->
-         <!--<h6 class="pub-color-blue">但偏偏雨渐渐</h6>-->
-         <!--<p>还有多久才能陪在你身边，但故事的最后，你还是说了拜拜</p>-->
-       <!--</li>-->
-     <!--</ul>-->
-      <!--<p class="fenge-line02">温馨提示：每月26天工作时间，如遇国家规定假日上班的，-->
-        <!--除正常工资外，加付正常工资的3倍计算</p>-->
-      <!--<div class="title title1">-->
-        <!--<h2>服务介绍</h2>-->
-        <!--<i></i>-->
-      <!--</div>-->
-        <!--<p class="title-p">价格透明，品质保证</p>-->
-        <!--<ul class="contens-nurse">-->
-          <!--<li>-->
-            <!--<b><img src="./img/mon-price1.jpg"></b>-->
-            <!--<div>-->
-              <!--<b>8800/月</b>-->
-              <!--<h6>初级（一星）月嫂</h6>-->
-             <!--<p> 资历：工作2年以上</p>-->
-              <!--<p>经验：有护理10个以上宝宝经验</p>-->
-            <!--</div>-->
-          <!--</li>-->
-          <!--<li>-->
-            <!--<b><img src="./img/mon-price2.jpg"></b>-->
-            <!--<div>-->
-              <!--<b>9800/月</b>-->
-              <!--<h6>中级（二星）月嫂</h6>-->
-              <!--<p> 资历：工作3年以上</p>-->
-              <!--<p>经验：有护理15个以上宝宝经验</p>-->
-            <!--</div>-->
-          <!--</li>-->
-          <!--<li>-->
-            <!--<b><img src="./img/mon-price3.jpg"></b>-->
-            <!--<div>-->
-              <!--<b>10800/月</b>-->
-              <!--<h6>高级（三星）月嫂</h6>-->
-              <!--<p> 资历：工作4年以上</p>-->
-              <!--<p>经验：有护理20个以上宝宝经验</p>-->
-            <!--</div>-->
-          <!--</li>-->
-          <!--<li>-->
-            <!--<b><img src="./img/mon-price4.jpg"></b>-->
-            <!--<div>-->
-              <!--<b>11800/月</b>-->
-              <!--<h6>特级（四星）月嫂</h6>-->
-              <!--<p> 资历：工作5年以上</p>-->
-              <!--<p>经验：有护理20个以上宝宝经验</p>-->
-            <!--</div>-->
-          <!--</li>-->
-          <!--<li>-->
-            <!--<b><img src="./img/mon-price5.jpg"></b>-->
-            <!--<div>-->
-              <!--<b>13800/月</b>-->
-              <!--<h6>金牌（五星）月嫂</h6>-->
-              <!--<p> 资历：工作5年以上</p>-->
-              <!--<p>经验：有护理30个以上宝宝经验</p>-->
-            <!--</div>-->
-          <!--</li>-->
-          <!--<li>-->
-            <!--<b><img src="./img/mon-price6.jpg"></b>-->
-            <!--<div>-->
-              <!--<b>16800/月</b>-->
-              <!--<h6>金牌月嫂</h6>-->
-              <!--<p> 资历：工作6年以上</p>-->
-              <!--<p>经验：有护理30个以上宝宝经验</p>-->
-            <!--</div>-->
-          <!--</li>-->
-        <!--</ul>-->
-        <!--<div class="fenge-line03"></div>-->
-        <!--<div class="title">-->
-          <!--<h2>服务流程</h2>-->
-          <!--<i></i>-->
-          <!--<p class="title-p">快速预约，准时服务</p>-->
-        <!--</div>-->
-        <!--<div class="process"><img srcset="./img/mon-nurse5.jpg"></div>-->
+      <div class="month-nurse-module01 clearfix">
+        <ul>
+          <li class="li1">
+            <div class="li1-hover">
+              <br>
+              面试严格
+              <br>
+              系统培训
+              <br>
+              标准化服务
+            </div>
+          </li>
+          <li class="li2">
+            <div class="li1-hover">
+              <br>
+              月嫂保险
+              <br>
+              人身体检
+              <br>
+              规范性工作
+            </div>
+          </li>
+          <li class="li3">
+            <div class="li1-hover">
+              <br>
+              持证上岗
+              <br>
+              权威认证
+              <br>
+              专业化保障
+            </div>
+          </li>
+        </ul>
+        <div class="nurse-btn">月嫂在线带人</div>
+        <P>月嫂是母婴护理师的俗称，主要是专业护理产妇与新生儿，服务的内容以月子护理为主，新生儿的护理占80%，产妇的护理占20%。月嫂属于高级家政人员，不同于一般的家政护理员。</P>
+      </div>
+      <div class="fenge-line01"></div>
+      <div class="title">
+        <h2>服务介绍</h2>
+        <i></i>
+        <p>专业月嫂，呵护宝宝</p>
+      </div>
+     <ul class="month-nurse-module02">
+       <li>
+         <i >01</i>
+         <h6 class="pub-color-blue">但偏偏雨渐渐</h6>
+         <p class="title-p">指导正确哺乳  喂养、呵护、洗澡 穿衣、换洗尿布 物品消毒 </p>
+       </li>
+       <li>
+         <i class="pub-color01">02</i>
+         <h6 class="pub-color-wred">但偏偏雨渐渐</h6>
+         <p>还有多久才能陪在你身边，但故事的最后，你还是说了拜拜</p>
+       </li>
+       <li>
+         <i>03</i>
+         <h6 class="pub-color-blue">但偏偏雨渐渐</h6>
+         <p>还有多久才能陪在你身边，但故事的最后，你还是说了拜拜</p>
+       </li>
+       <li>
+         <i class="pub-color01">04</i>
+         <h6 class="pub-color-wred">但偏偏雨渐渐</h6>
+         <p>还有多久才能陪在你身边，但故事的最后，你还是说了拜拜</p>
+       </li>
+       <li>
+         <i>05</i>
+         <h6 class="pub-color-blue">但偏偏雨渐渐</h6>
+         <p>还有多久才能陪在你身边，但故事的最后，你还是说了拜拜</p>
+       </li>
+     </ul>
+      <p class="fenge-line02">温馨提示：每月26天工作时间，如遇国家规定假日上班的，
+        除正常工资外，加付正常工资的3倍计算</p>
+      <div class="title title1">
+        <h2>服务介绍</h2>
+        <i></i>
+      </div>
+        <p class="title-p">价格透明，品质保证</p>
+        <ul class="contens-nurse">
+          <li>
+            <b><img src="./img/mon-price1.jpg"></b>
+            <div>
+              <b>8800/月</b>
+              <h6>初级（一星）月嫂</h6>
+             <p> 资历：工作2年以上</p>
+              <p>经验：有护理10个以上宝宝经验</p>
+            </div>
+          </li>
+          <li>
+            <b><img src="./img/mon-price2.jpg"></b>
+            <div>
+              <b>9800/月</b>
+              <h6>中级（二星）月嫂</h6>
+              <p> 资历：工作3年以上</p>
+              <p>经验：有护理15个以上宝宝经验</p>
+            </div>
+          </li>
+          <li>
+            <b><img src="./img/mon-price3.jpg"></b>
+            <div>
+              <b>10800/月</b>
+              <h6>高级（三星）月嫂</h6>
+              <p> 资历：工作4年以上</p>
+              <p>经验：有护理20个以上宝宝经验</p>
+            </div>
+          </li>
+          <li>
+            <b><img src="./img/mon-price4.jpg"></b>
+            <div>
+              <b>11800/月</b>
+              <h6>特级（四星）月嫂</h6>
+              <p> 资历：工作5年以上</p>
+              <p>经验：有护理20个以上宝宝经验</p>
+            </div>
+          </li>
+          <li>
+            <b><img src="./img/mon-price5.jpg"></b>
+            <div>
+              <b>13800/月</b>
+              <h6>金牌（五星）月嫂</h6>
+              <p> 资历：工作5年以上</p>
+              <p>经验：有护理30个以上宝宝经验</p>
+            </div>
+          </li>
+          <li>
+            <b><img src="./img/mon-price6.jpg"></b>
+            <div>
+              <b>16800/月</b>
+              <h6>金牌月嫂</h6>
+              <p> 资历：工作6年以上</p>
+              <p>经验：有护理30个以上宝宝经验</p>
+            </div>
+          </li>
+        </ul>
+        <div class="fenge-line03"></div>
+        <div class="title">
+          <h2>服务流程</h2>
+          <i></i>
+          <p class="title-p">快速预约，准时服务</p>
+        </div>
+        <div class="process"><img srcset="./img/mon-nurse5.jpg"></div>
         <div class="fenge-line03"></div>
         <div class="title">
           <h2>月嫂风采</h2>
           <i></i>
           <p>服务标准化，专业化</p>
         </div>
-      <div><img :src="api+yuersao"></div>
         <ul>
-          <li v-for="(nurse, index) in nurseinfos" :key="index">
-            <div class="nurse-bg"><img class="nurse-bg-img" :src=" api+nurse.img"></div>
+          <li>
+            <div class="nurse-bg"><img class="nurse-bg-img" src="./img/nurse-person01.png"></div>
             <div class="nurse-cont">
-              <p class="p-word">{{nurse.ename}}</p>
+              <p class="p-word">刘阿姨</p>
               <p class="p-word word-line02" id="word-line01">五星级月嫂</p>
-              <p class="p-word">{{nurse.eage}}/{{nurse.enativeplace}}/{{nurse.eworkingage}}年月嫂经验</p>
+              <p class="p-word">51岁/江苏/9年月嫂经验</p>
               <hr>
               <p class="nurse-cont-des">刘姨性格温和随和，比较容易相处，她在宝宝喂养方面较有经验，善于观察宝宝的状态，判断哭闹原因。在照顾方面不正确的做法，她能给予意见和纠正，很感谢！</p>
             </div>
           </li>
-          <!--<li>-->
-            <!--<div class="nurse-bg"><img class="nurse-bg-img" src="./img/nurse-person02.png"></div>-->
-            <!--<div class="nurse-cont">-->
-              <!--<p class="p-word">刘阿姨</p>-->
-              <!--<p class="p-word" id="word-line02">五星级月嫂</p>-->
-              <!--<p class="p-word">51岁/江苏/9年月嫂经验</p>-->
-              <!--<hr>-->
-              <!--<p class="nurse-cont-des">刘姨性格温和随和，比较容易相处，她在宝宝喂养方面较有经验，善于观察宝宝的状态，判断哭闹原因。在照顾方面不正确的做法，她能给予意见和纠正，很感谢！</p>-->
-            <!--</div>-->
-          <!--</li>-->
-          <!--<li>-->
-            <!--<div class="nurse-bg"><img class="nurse-bg-img" src="./img/nurse-person03.png"></div>-->
-            <!--<div class="nurse-cont">-->
-              <!--<p class="p-word">刘阿姨</p>-->
-              <!--<p class="p-word" id="word-line03">五星级月嫂</p>-->
-              <!--<p class="p-word">51岁/江苏/9年月嫂经验</p>-->
-              <!--<hr>-->
-              <!--<p class="nurse-cont-des">刘姨性格温和随和，比较容易相处，她在宝宝喂养方面较有经验，善于观察宝宝的状态，判断哭闹原因。在照顾方面不正确的做法，她能给予意见和纠正，很感谢！</p>-->
-            <!--</div>-->
-          <!--</li>-->
+          <li>
+            <div class="nurse-bg"><img class="nurse-bg-img" src="./img/nurse-person02.png"></div>
+            <div class="nurse-cont">
+              <p class="p-word">刘阿姨</p>
+              <p class="p-word" id="word-line02">五星级月嫂</p>
+              <p class="p-word">51岁/江苏/9年月嫂经验</p>
+              <hr>
+              <p class="nurse-cont-des">刘姨性格温和随和，比较容易相处，她在宝宝喂养方面较有经验，善于观察宝宝的状态，判断哭闹原因。在照顾方面不正确的做法，她能给予意见和纠正，很感谢！</p>
+            </div>
+          </li>
+          <li>
+            <div class="nurse-bg"><img class="nurse-bg-img" src="./img/nurse-person03.png"></div>
+            <div class="nurse-cont">
+              <p class="p-word">刘阿姨</p>
+              <p class="p-word" id="word-line03">五星级月嫂</p>
+              <p class="p-word">51岁/江苏/9年月嫂经验</p>
+              <hr>
+              <p class="nurse-cont-des">刘姨性格温和随和，比较容易相处，她在宝宝喂养方面较有经验，善于观察宝宝的状态，判断哭闹原因。在照顾方面不正确的做法，她能给予意见和纠正，很感谢！</p>
+            </div>
+          </li>
         </ul>
-      <!--测试-->
       <div class="fenge-line03"></div>
     </div>
     <div class="primary-right" ref="stop">

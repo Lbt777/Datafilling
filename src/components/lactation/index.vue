@@ -405,7 +405,6 @@
   </div>
 </template>
 <script>
-// import {lactation, lactationinfo} from 'api/request'
 export default {
   data () {
     return {

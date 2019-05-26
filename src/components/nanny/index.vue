@@ -236,6 +236,18 @@ export default {
     return {
       img: '',
       api
+//  lists: [
+//    {name: '非住家保姆'},
+//    {name: '保洁+照顾老人', title: '单休/双休'},
+//    {name: '保洁+带小孩', title: '单休/双休'},
+//    {name: '保洁+照顾老人', title: '单休/双休'}
+//    ],
+//  list: [
+  //  {name: '住家保姆（单休）'},
+  //  {name: '保洁+做饭'},
+  //  {name: '保洁+带小孩', title: '0～3岁/3～11岁'},
+  //  {name: '保洁+照顾老人', title: '自理/半自理/不能自理'}
+  //  ]
     }
   },
   components: {
