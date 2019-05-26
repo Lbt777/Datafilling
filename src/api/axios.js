@@ -3,7 +3,7 @@
 
 import axios from 'axios'
 import {api} from './index'
-import qs from 'qs'
+// import qs from 'qs'
 
 /* axios封装ajax请求 使用promise再次封装 */
 /* methods 请求方法post，get */
@@ -13,10 +13,12 @@ import qs from 'qs'
 /* 给methods一个默认值post */
 function sendaxios (methods = 'post', url, data = {}) {
   return new Promise((resolve, reject) => {
+    // let requesturl = api + url + '?' + qs.stringify(data)
     axios({
       methods: methods,
       url: api + url,
-      data: qs.stringify(data)
+      data: data
+      // data: data
     }).then((res) => {
       // 请求成功
       // eslint-disable-next-line eqeqeq
