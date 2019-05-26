@@ -239,6 +239,9 @@ export default new Router({
           path: '',
           components: {
             default: personaltab1
+          },
+          meta: {
+            user: true
           }
         },
         {
@@ -262,6 +265,7 @@ export default new Router({
           }
         }
       ],
+      // 原信息 存储信息的
       meta: {
         title: 'e家政 - 个人中心'
       }
@@ -313,6 +317,15 @@ export default new Router({
           path: '',
           components: {
             default: login
+          },
+          beforeEnter: (to, from, next) => {
+            // 已登录 不能再进行登录
+            var token = window.localStorage.getItem('token')
+            if (token) {
+              next('/')
+            } else {
+              next()
+            }
           }
         },
         {

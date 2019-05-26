@@ -40,11 +40,12 @@
                 <li>
                     <router-link to="/cooperation">城市合作</router-link>
                 </li>
-                <li>
-                    <router-link to="/personal">个人中心</router-link>
+                <li v-if="token" @click="outlogin">
+                    <router-link to="" class="sign_out">退出登录</router-link>
                 </li>
                 <li>
-                    <router-link to="/logon">请登录</router-link>
+                    <router-link to="/personal" v-if="token" class="sign_out">个人中心</router-link>
+                    <router-link to="/logon" v-if="!token">请登录</router-link>
                 </li>
             </ul>
         </div>
@@ -56,6 +57,7 @@ import {postlist, nav} from 'api/request'
 export default {
   data () {
     return {
+      show: true,
       // 创建空数组保存data
       item_city: [],
       item_nav: []
@@ -75,6 +77,10 @@ export default {
       let city1 = e.target.innerHTML
       let city2 = this.$refs.citys
       city2.innerHTML = city1
+    },
+    outlogin () {
+      localStorage.clear()
+      this.$router.go(0)
     }
   },
   mounted () {
@@ -82,6 +88,7 @@ export default {
     postlist((data) => {
       // 保存到空数组中
       console.log(data)
+      this.$router.push({path: '/'})
       this.item_city = data[0].data
       // console.log('优化后的数据', this.item_city)
     })
@@ -102,8 +109,15 @@ export default {
       for (let i = 0; i < login.length; i++) {
         this.item_nav.push(login[i])
       }
-      // console.log(this.item_nav)
+      console.log(this.item_nav)
     })
+    // 改变登录状态
+    // var token = window.localStorage.getItem('token')
+  },
+  computed: {
+    token: function () {
+      return this.$store.state.token
+    }
   }
 }
 </script>

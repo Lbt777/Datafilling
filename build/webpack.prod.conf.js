@@ -1,5 +1,6 @@
 'use strict'
 const path = require('path')
+favicon: path.resolve('favicon.ico') //新增 图标
 const utils = require('./utils')
 const webpack = require('webpack')
 const config = require('../config')

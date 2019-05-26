@@ -1,6 +1,7 @@
 // 所有请求放到这个文件中导出
 // 存放发送请求的方法
 import sendaxios from './axios'
+import store from '../store'
 // 顶部导航与banner
 let nav = function (fn) {
   // 传入三个参数
@@ -71,5 +72,19 @@ let denglu = function (data, fn) {
     fn(res)
   })
 }
+console.log(store)
+// 刷新判断是否登录
+function loging () {
+  // 1.发送请求判断是否登录
+  // 2.若登录 后台返回登录信息和token
+  // 3.将返回的信息存储到localstorage中
+  var telphone = window.localStorage.getItem('user')
+  telphone = JSON.parse(telphone)
+  console.log(telphone)
+  var token = window.localStorage.getItem('token')
+  // 存入
+  store.commit('userInfor', token, telphone)
+  console.log(store.state)
+}
 // 导出postlist方法
-export {nav, postlist, information, service, characteristic, adv, sendphone, register, denglu}
+export {nav, postlist, information, service, characteristic, adv, sendphone, register, denglu, loging}

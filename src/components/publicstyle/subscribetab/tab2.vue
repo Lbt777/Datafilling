@@ -9,9 +9,8 @@
     </div>
     <el-form :model="ruleForm" :rules="rules" ref="ruleForm" label-width="100px" class="demo-ruleForm site">
   <el-form-item label="服务区域" prop="city">
-    <!-- <el-input v-model="ruleForm.city"></el-input> -->
     <div class="list1">
-      <v-distpicker :province="select.province" :city="select.city" :area="select.area"></v-distpicker>
+      <v-distpicker></v-distpicker>
     </div>
   </el-form-item>
   <el-form-item label="详细地址" prop="add">
@@ -84,9 +83,7 @@ export default {
       }
     }
     return {
-      select: { province: '陕西省', city: '西安市', area: '区' },
       ruleForm: {
-        select: { province: '陕西省', city: '西安市', area: '区' },
         city: '',
         add: '',
         phone: '',
