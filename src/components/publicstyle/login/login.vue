@@ -14,7 +14,7 @@
               <div>{{ruleForm.msg}}</div>
           </div>
           <el-form-item>
-            <el-button type="primary" @click="submitForm('ruleForm')">登录</el-button>
+            <el-button type="primary" @click="submitForm('ruleForm')" @keyup.enter="submitForm('ruleForm')">登录</el-button>
           </el-form-item>
         </el-form>
          <router-link to="/register">免费注册</router-link>

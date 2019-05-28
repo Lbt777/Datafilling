@@ -60,16 +60,13 @@
       <p>地图e家政</p>
       <span>&nbsp;&nbsp;&nbsp;&nbsp;   ap e Housekeeping</span>
     </div>
-    <div></div>
-    <div class="information-phon information-map">
-      <p> 在线预约</p>
-      <span>&nbsp;&nbsp;&nbsp;&nbsp;       nline Booking</span>
+    <div>
     </div>
-    <div class="information-list"></div>
   </div>
 </template>
 <script>
-export default {}
+export default {
+}
 </script>
 <style lang="less" scoped>
   @import "~static/css/common.less";
