@@ -9,6 +9,14 @@
       <ul class="serve clearfix">
         <li>
           <div class="primary-dev primary-dev01">
+<<<<<<< HEAD
+          <i></i>
+          <a href="#"><h6>{{nav.hname}}</h6></a>
+          <a href="#"><p>{{nav.hdescribe}}</p></a>
+          <a href="#/housesub">
+            <div class="btn-prev01"></div>
+          </a>
+=======
             <i></i>
             <a href="#"><h6>日常保洁</h6></a>
             <a href="#"><p>钟点工/小时工/清洁护理</p></a>
@@ -16,6 +24,7 @@
               <img class="btn-prev01" src="./img/index-icon-1.png">
               <img class="btn-prev02" src="./img/index-icon-3-1.png">
             </a>
+>>>>>>> 79422d2595ccc63a065a706197ded0a9d610dcbb
           </div>
         </li>
         <li>
@@ -174,9 +183,11 @@ export default {
     margin-bottom: 20px;
   }
 .btn-prev01{
-  display: inline-block;
-}
-.btn-prev02{
-  display: none;
+  width: 42px;
+  height: 42px;
+  background: url("./img/index-icon-1.png")no-repeat center;
+  &:hover{
+    background: url("./img/index-icon-3-1.png")no-repeat center;
+  }
 }
 </style>
