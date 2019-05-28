@@ -420,20 +420,23 @@ export default {
   },
   mounted () {
     window.addEventListener('scroll', this.handleScroll)
-    lactation({
-      'cuirushi_id': 1
-    }, (data) => {
+
+    lactation((data) => {
       // 保存到空数组中
+      console.log('打印')
       this.message = data.paddress
-      console.log(data)
+      console.log(this.message)
+      console.log('打印')
     })
-    lactationinfo({
-      'employee_gid': 4
-    }, (data) => {
+    lactationinfo((data) => {
       // 保存到空数组中
-      console.log(data)
+      console.log('data1')
       this.nurseinfo = data.data
+      console.log(this.nurseinfo)
+      console.log('data2')
     })
+
+
   },
   methods: {
     handleClick (tab, event) {

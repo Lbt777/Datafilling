@@ -59,13 +59,12 @@
       <p>地图e家政</p>
       <span>&nbsp;&nbsp;&nbsp;&nbsp;   ap e Housekeeping</span>
     </div>
-    <div class="information-maps">
-    </div>
   </div>
 </template>
 <script type="text/javascript" src="https://webapi.amap.com/maps?v=1.3&key=我的地图325"></script>
 <script>
-export default {}
+export default {
+}
 </script>
 <style lang="less" scoped>
 @import "~static/css/common.less";

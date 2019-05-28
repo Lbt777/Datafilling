@@ -31,7 +31,7 @@
             </el-form-item>
           </div>
           <el-form-item>
-            <el-button type="primary" @click="submitForm('ruleForm')">注册</el-button>
+            <el-button type="primary" @click="submitForm('ruleForm')" @keyup.enter="submitForm('ruleForm')">注册</el-button>
           </el-form-item>
           <router-link to="/logon">返回登录</router-link>
       </el-form>

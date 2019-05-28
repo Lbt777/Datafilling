@@ -49,23 +49,12 @@ let service = function (fn) {
 // 首页特色服务类型
 let characteristic = function (fn) {
   // 传入三个参数
-  sendaxios('post', 'jsopngen_queryTs.action').then((res) => {
+  sendaxios('post', 'jsopnhouse_query.action').then((res) => {
     // 请求成功后调用回调函数
     fn(res)
   })
 }
-// 催乳师页面
-let lactation = function (data, fn) {
-  sendaxios('post', 'CUI_cuirushiServe.action', data).then((res) => {
-    fn(res)
-  })
-}
-// 催乳师页面员工信息
-let lactationinfo = function (data, fn) {
-  sendaxios('post', 'CUI_cuirushiEmp.action', data).then((res) => {
-    fn(res)
-  })
-}
+
 let maternityinfo = function (fn) {
   // 传入三个参数{'employee_gid': 3}
   sendaxios('post', 'PI_yuesaoEmp.action?employee_gid=3', {'employee_gid': 3}).then((res) => {
@@ -83,7 +72,6 @@ let adv = function (fn) {
 let nanny = function (data, fn) {
   // 传入三个参数
   sendaxios('post', 'frnanny_Content.action', data).then((res) => {
-  // {'cuirushi_id': 1}
     // 请求成功后调用回调函数
     fn(res)
     console.log('已调用回调函数fn')
@@ -127,10 +115,10 @@ let cxlist = function (data, fn) {
     fn(res)
   })
 }
-// 预约订单
-let yuyue = function (data, fn) {
+// 删除订单
+let sclist = function (data, fn) {
   // 传入三个参数
-  sendaxios('post', 'order_saveorder.action', data).then((res) => {
+  sendaxios('post', 'jsopnord_deleteOrder', data).then((res) => {
     fn(res)
   })
 }
@@ -141,10 +129,10 @@ function loging () {
   // 3.将返回的信息存储到localstorage中
   var telphone = window.localStorage.getItem('user')
   telphone = JSON.parse(telphone)
-  // console.log(telphone)
+  console.log(telphone)
   var token = window.localStorage.getItem('token')
   store.commit('userInfor', token, telphone)
-  // console.log(store.state)
+  console.log(store.state)
 }
 // 导出postlist方法
-export {nav, postlist, information, loging, housekeepinfo, maternityinfo, service, characteristic, maternity, adv, sendphone, register, denglu, nanny, parenting, cxlist, yuyue, lactation, lactationinfo}
+export {nav, postlist, information, loging, sclist, housekeepinfo, maternityinfo, service, characteristic, maternity, adv, sendphone, register, denglu, nanny, parenting, cxlist}
