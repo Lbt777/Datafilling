@@ -141,6 +141,7 @@
         <!--</div>-->
         <!--<div class="process"><img srcset="./img/mon-nurse5.jpg"></div>-->
       <div><img :src="api+yuersao"></div>
+
       <!--<div class="fenge-line03"></div>-->
       <!--<div class="title">-->
         <!--<h2>月嫂风采</h2>-->
@@ -292,6 +293,7 @@
           <i></i>
           <p>服务标准化，专业化</p>
         </div>
+
         <ul>
           <li>
             <div class="nurse-bg"><img class="nurse-bg-img" src="./img/nurse-person01.png"></div>
@@ -332,9 +334,12 @@
     </div>
   </div>
 </template>
+
 <script>
 import {api} from 'api/index'
 import {maternity, maternityinfo} from 'api/request'
+
+
 export default {
   data () {
     return {

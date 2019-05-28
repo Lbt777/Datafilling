@@ -88,6 +88,7 @@ export default {
     postlist((data) => {
       // 保存到空数组中
       console.log(data)
+      this.$router.push({path: '/'})
       this.item_city = data[0].data
       console.log('优化后的数据', this.item_city)
     })

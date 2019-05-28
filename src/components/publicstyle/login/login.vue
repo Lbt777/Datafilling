@@ -14,7 +14,7 @@
               <div>{{ruleForm.msg}}</div>
           </div>
           <el-form-item>
-            <el-button type="primary" @click="submitForm('ruleForm')">登录</el-button>
+            <el-button type="primary" @click="submitForm('ruleForm')" @keyup.enter="submitForm('ruleForm')">登录</el-button>
           </el-form-item>
         </el-form>
          <router-link to="/register">免费注册</router-link>
@@ -86,8 +86,8 @@ export default {
             'userupassword': this.ruleForm.pass
           }, (res) => {
             console.log(res)
-            window.localStorage.setItem('token', res.success)
-            window.localStorage.setItem('user', JSON.stringify(res.telphone))
+            window.localStorage.setItem('token', res.token)
+            window.localStorage.setItem('user', res.telphone)
             this.$store.commit('userInfor', res.telphone)
             alert(res.message)
             // 跳转到首页

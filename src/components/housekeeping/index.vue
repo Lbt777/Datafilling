@@ -9,12 +9,15 @@
       <ul class="serve clearfix">
         <li v-for="(nav, index) in contens" :key="index">
           <div class="primary-dev primary-dev01">
+
           <i></i>
           <a href="#"><h6>{{nav.hname}}</h6></a>
           <a href="#"><p>{{nav.hdescribe}}</p></a>
           <a href="#/housesub">
             <div class="btn-prev01"></div>
           </a>
+
+
           </div>
         </li>
       </ul>
@@ -40,10 +43,10 @@ export default {
   mounted () {
     housekeep((data) => {
       // 保存到空数组中
-      console.log("1111111111112")
+
       this.contens = data[0].data
       console.log(this.contens)
-      console.log("2222222222221")
+
     })
   },
   methods: {
@@ -111,6 +114,7 @@ export default {
     }
   }
   .serve{
+
     padding: 0px 0px 0px 0px;
   }
  .serve  li{

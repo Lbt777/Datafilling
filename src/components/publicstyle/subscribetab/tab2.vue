@@ -8,11 +8,11 @@
       <p>预订须知：协助产妇做些粗活，帮助产妇做她不方便的活，重大节假日可能上浮，拥有特殊技能可能会加价，需要阿姨确认是否接单</p>
     </div>
     <el-form :model="ruleForm" :rules="rules" ref="ruleForm" label-width="100px" class="demo-ruleForm site">
-  <el-form-item label="服务区域" prop="city">
+  <!-- <el-form-item label="服务区域">
     <div class="list1">
       <v-distpicker></v-distpicker>
     </div>
-  </el-form-item>
+  </el-form-item> -->
   <el-form-item label="详细地址" prop="add">
     <el-input v-model="ruleForm.add"></el-input>
   </el-form-item>
@@ -66,9 +66,9 @@
 </div>
 </template>
 <script>
-import VDistpicker from 'v-distpicker'
+// import VDistpicker from 'v-distpicker'
 export default {
-  components: {VDistpicker},
+  // components: {VDistpicker},
   data () {
     var phone = (rule, value, callback) => {
       if (!value) {
@@ -84,7 +84,6 @@ export default {
     }
     return {
       ruleForm: {
-        city: '',
         add: '',
         phone: '',
         region: '',
@@ -96,10 +95,6 @@ export default {
         desc: ''
       },
       rules: {
-        city: [
-          // required是否必填
-          { required: true, message: '请输入地址', trigger: 'blur' }
-        ],
         add: [
           // required是否必填
           { required: true, message: '请输入详细地址', trigger: 'blur' }
@@ -129,8 +124,8 @@ export default {
     }
   },
   methods: {
-    submitForm (formName) {
-      this.$refs[formName].validate((valid) => {
+    submitForm (ruleForm) {
+      this.$refs[ruleForm].validate((valid) => {
         if (valid) {
           alert('submit!')
         } else {

@@ -25,6 +25,7 @@ let information = function (fn) {
     fn(res)
   })
 }
+
 let housekeep = function (fn) {
   // 传入三个参数
   sendaxios('post', 'House_query.action').then((res) => {
@@ -35,6 +36,7 @@ let housekeep = function (fn) {
 }
 let housekeepinfo = function (fn) {
   // 传入三个参数
+
   sendaxios('post', 'jsopnemp_queryID.action', {'gen_id': 1}).then((res) => {
     // 请求成功后调用回调函数
     fn(res)
@@ -43,7 +45,9 @@ let housekeepinfo = function (fn) {
 }
 let maternity = function (fn) {
   // 传入三个参数
+
   sendaxios('post', 'PI_yuesaoServe.action', {'yuesao_id': 1}).then((res) => {
+
     // 请求成功后调用回调函数
     fn(res)
     console.log('已调用回调函数fn')
@@ -84,16 +88,17 @@ let service = function (fn) {
 let characteristic = function (fn) {
   // 传入三个参数
   sendaxios('post', 'jsopnhouse_query.action').then((res) => {
+
     // 请求成功后调用回调函数
     fn(res)
   })
 }
 
-
 // 首页我们的优势
 let adv = function (fn) {
   // 传入三个参数
   sendaxios('post', 'jsopnadv_query.action').then((res) => {
+
     // 请求成功后调用回调函数
     fn(res)
   })
@@ -101,7 +106,9 @@ let adv = function (fn) {
 // 保姆
 let nanny = function (data, fn) {
   // 传入三个参数
+
   sendaxios('post', 'frnanny_Content.action', data).then((res) => {
+
   // {'cuirushi_id': 1}
     // 请求成功后调用回调函数
     fn(res)
@@ -111,7 +118,15 @@ let nanny = function (data, fn) {
 // 育儿嫂
 let parenting = function (data, fn) {
   // 传入三个参数
+
   sendaxios('post', 'reyuersao_Content.action', data).then((res) => {
+
+
+
+
+
+
+
     // 请求成功后调用回调函数
     fn(res)
     console.log('已调用回调函数fn')
@@ -146,7 +161,13 @@ let cxlist = function (data, fn) {
     fn(res)
   })
 }
-
+// 删除订单
+let sclist = function (data, fn) {
+  // 传入三个参数
+  sendaxios('post', 'jsopnord_deleteOrder', data).then((res) => {
+    fn(res)
+  })
+}
 // 刷新判断是否登录
 function loging () {
   // 1.请求后台判断是否登录
@@ -160,6 +181,14 @@ function loging () {
   console.log(store.state)
 }
 // 导出postlist方法
+
+
+
+
+
+
+
+
 export {nav, postlist, information, loging,housekeep,
   housekeepinfo, service, characteristic,
   maternity, maternityinfo, adv, sendphone, register, denglu, nanny, parenting, cxlist}

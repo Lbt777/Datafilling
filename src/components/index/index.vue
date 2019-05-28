@@ -407,10 +407,10 @@ export default {
     })
     characteristic((data) => {
       this.item_characteristic = data
+      console.log(this.item_characteristic)
     })
     adv((data) => {
       this.item_adv = data.data
-      console.log(this.item_adv)
     })
   }
 }

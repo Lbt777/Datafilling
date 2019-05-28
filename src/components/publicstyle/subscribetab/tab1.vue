@@ -67,6 +67,8 @@
 </template>
 <script>
 import VDistpicker from 'v-distpicker'
+import moment from 'moment'
+import {yuyue} from 'api/request'
 export default {
   components: {VDistpicker},
   data () {
@@ -122,9 +124,23 @@ export default {
   },
   methods: {
     submitForm (formName) {
+    //   console.log(this.ruleForm)
+    //   console.log(this.ruleForm.date2)
+    //   console.log(moment(this.ruleForm.date2).format('MM/DD/YYYY HH:mm:ss'))
       this.$refs[formName].validate((valid) => {
         if (valid) {
-          alert('submit!')
+          yuyue({
+            oaddress: this.ruleForm.add,
+            ophonenumber: this.ruleForm.phone,
+            ocontent: this.ruleForm.type[0],
+            oservicedate: moment(this.ruleForm.date2).format('MM/DD/YYYY HH:mm:ss'),
+            oorderdate: this.ruleForm.region,
+            oarea: this.ruleForm.desc,
+            uid: window.localStorage.getItem('token')
+          }, (res) => {
+            console.log(res.message)
+          })
+          alert('预约成功!')
         } else {
           console.log('error submit!!')
           return false

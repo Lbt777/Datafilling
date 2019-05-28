@@ -18,9 +18,11 @@
     "element-ui": "^2.8.2",
     "js-md5": "^0.7.3",
     "less": "^3.9.0",
+    "moment": "^2.24.0",
     "qs": "^6.7.0",
     "v-distpicker": "^1.2.1",
     "vue": "^2.5.2",
+    "vue-amap": "^0.5.9",
     "vue-monoplasty-slide-verify": "^1.0.5",
     "vue-router": "^3.0.1",
     "vuex": "^3.1.1"
