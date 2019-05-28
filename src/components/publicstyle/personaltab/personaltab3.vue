@@ -15,8 +15,6 @@
         <p>{{item.ostate}}</p>
         <p>{{item.oorderdate}}</p>
       </li>
-      <!--<li>订单提交</li>-->
-      <!--<li>2019年5月25日 下午15:46</li>-->
       <li>
         <router-link to="/personaltab4">
         <span class="span-hover">查看</span>
@@ -27,6 +25,7 @@
   </div>
 </template>
 <script>
+import {cxlist} from 'api/request'
 export default {
   data () {
     return {
@@ -36,6 +35,13 @@ export default {
         {oorderdate: 'Apr 17, 2019 1:53:33 PM'}
       ]
     }
+  },
+  mounted () {
+    cxlist({
+      uid: 1
+    }, (res) => {
+      console.log(res)
+    })
   }
 }
 </script>

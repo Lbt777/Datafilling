@@ -18,10 +18,7 @@
           <div class="personal-bgimgs">
             <span class="font-16">购物车</span>
             <router-link to="/personaltab3">
-            <p>订单列表</p>
-            </router-link>
-            <router-link to="/personaltab5">
-            <p>收藏列表</p>
+            <p >订单列表</p>
             </router-link>
             <div class="hr"></div>
           </div>
