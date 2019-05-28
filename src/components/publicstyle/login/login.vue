@@ -86,8 +86,8 @@ export default {
             'userupassword': this.ruleForm.pass
           }, (res) => {
             console.log(res)
-            window.localStorage.setItem('token', res.success)
-            window.localStorage.setItem('user', JSON.stringify(res.telphone))
+            window.localStorage.setItem('token', res.token)
+            window.localStorage.setItem('user', res.telphone)
             this.$store.commit('userInfor', res.telphone)
             alert(res.message)
             // 跳转到首页

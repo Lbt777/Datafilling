@@ -9,7 +9,7 @@ module.exports = {
 
     // Paths
     assetsSubDirectory: 'static',
-    assetsPublicPath: '',
+    assetsPublicPath: '/',
     proxyTable: {
       '/api': {
         target: 'http://huangchuan.natapp1.cc',// 目标接口

@@ -263,11 +263,7 @@ export default {
   mounted () {
     housekeepinfo((data) => {
       // 保存到空数组中
-      console.log('打印1')
       console.log(data)
-//      this.nurseinfo = data[0].data
-//      console.log(data[0].data)
-      console.log('打印2')
     })
   }
 }

@@ -1,7 +1,6 @@
 <template>
   <div class="container clearfix">
     <div class="primary">
-<<<<<<< HEAD
       <!--<div class="month-nurse-module01 clearfix">-->
         <!--<ul>-->
           <!--<li class="li1">-->
@@ -148,7 +147,6 @@
         <i></i>
         <p>服务标准化，专业化</p>
       </div>
-=======
       <div class="month-nurse-module01 clearfix">
         <ul>
           <li class="li1">
@@ -335,14 +333,9 @@
     </div>
   </div>
 </template>
-<<<<<<< HEAD
 <script>
 import {api} from 'api/index'
 import {maternity, maternityinfo} from 'api/request'
-=======
-<script>import {api} from 'api/index'
-// import {maternity, maternityinfo} from 'api/request'
->>>>>>> 79422d2595ccc63a065a706197ded0a9d610dcbb
 export default {
   data () {
     return {
@@ -353,20 +346,20 @@ export default {
   },
   mounted () {
     window.addEventListener('scroll', this.handleScroll)
-    // maternity((data) => {
-    //   // 保存到空数组中
-    //   console.log('打印1')
-    //   console.log(data.paddress)
-    //   this.yuersao = data.paddress
-    //   console.log('打印2')
-    // })
-    // maternityinfo((data) => {
-    //   // 保存到空数组中
-    //   console.log('data1')
-    //   this.nurseinfos = data.data
-    //   console.log(this.nurseinfos)
-    //   console.log('data2')
-    // })
+    maternity((data) => {
+      // 保存到空数组中
+      // console.log('打印1')
+      // console.log(data.paddress)
+      this.yuersao = data.paddress
+      // console.log('打印2')
+    })
+    maternityinfo((data) => {
+      // 保存到空数组中
+      console.log('data1')
+      this.nurseinfos = data.data
+      // console.log(this.nurseinfos)
+      // console.log('data2')
+    })
   },
   methods: {
     handleScroll () {
