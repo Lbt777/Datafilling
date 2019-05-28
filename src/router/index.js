@@ -33,6 +33,16 @@ import promise from 'com/promise'
 import security from 'com/security'
 // 个人中心页面
 import personal from 'com/personal'
+// 个人中心页面tab1
+import personaltab1 from 'com/publicstyle/personaltab/personaltab1'
+// 个人中心页面tab2
+import personaltab2 from 'com/publicstyle/personaltab/personaltab2'
+// 个人中心页面tab3
+import personaltab3 from 'com/publicstyle/personaltab/personaltab3'
+// 个人中心页面tab4
+import personaltab4 from 'com/publicstyle/personaltab/personaltab4'
+// 个人中心页面tab5
+import personaltab5 from 'com/publicstyle/personaltab/personaltab5'
 // 在线预约页面
 import subscribe from 'com/subscribe'
 // 在线预约子路由页面1
@@ -228,9 +238,82 @@ export default new Router({
     {
       path: '/personal',
       components: {
-        default: personal,
-        personal: personal
+        default: personal
       },
+      children: [
+        {
+          path: '',
+          components: {
+            default: personaltab1
+          },
+          meta: {
+            user: true
+          }
+        },
+        {
+          path: '/personaltab1',
+          components: {
+            default: personaltab1
+          }
+        },
+        {
+          path: '',
+          components: {
+            default: personaltab2,
+            personaltab2: personaltab2
+          }
+        },
+        {
+          path: '/personaltab2',
+          components: {
+            default: personaltab2,
+            personaltab2: personaltab2
+          }
+        },
+        {
+          path: '',
+          components: {
+            default: personaltab3,
+            personaltab2: personaltab3
+          }
+        },
+        {
+          path: '/personaltab3',
+          components: {
+            default: personaltab3,
+            personaltab2: personaltab3
+          }
+        },
+        {
+          path: '',
+          components: {
+            default: personaltab4,
+            personaltab2: personaltab4
+          }
+        },
+        {
+          path: '/personaltab4',
+          components: {
+            default: personaltab4,
+            personaltab2: personaltab4
+          }
+        },
+        {
+          path: '',
+          components: {
+            default: personaltab5,
+            personaltab2: personaltab5
+          }
+        },
+        {
+          path: '/personaltab5',
+          components: {
+            default: personaltab5,
+            personaltab2: personaltab5
+          }
+        }
+      ],
+      // 原信息 存储信息的
       meta: {
         title: 'e家政 - 个人中心'
       }
@@ -282,6 +365,15 @@ export default new Router({
           path: '',
           components: {
             default: login
+          },
+          beforeEnter: (to, from, next) => {
+            // 已登录 不能再进行登录
+            var token = window.localStorage.getItem('token')
+            if (token) {
+              next('/')
+            } else {
+              next()
+            }
           }
         },
         {

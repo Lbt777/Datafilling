@@ -25,7 +25,7 @@ function sendaxios (methods = 'post', url, data = {}) {
       } else {
         alert('请求失败')
       }
-      console.log('返回的待处理数据,', res)
+      // console.log('返回的待处理数据,', res)
     }).catch((res) => {
       console.log('error')
     })

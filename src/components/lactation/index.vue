@@ -407,8 +407,11 @@
   </div>
 </template>
 <script>
+<<<<<<< HEAD
 import {api} from 'api/index'
 import {lactation, lactationinfo} from 'api/request'
+=======
+>>>>>>> 79422d2595ccc63a065a706197ded0a9d610dcbb
 export default {
   data () {
     return {
@@ -420,6 +423,7 @@ export default {
   },
   mounted () {
     window.addEventListener('scroll', this.handleScroll)
+<<<<<<< HEAD
     lactation((data) => {
       // 保存到空数组中
       console.log('打印')
@@ -434,6 +438,20 @@ export default {
       console.log(this.nurseinfo)
       console.log('data2')
     })
+=======
+    // lactation((data) => {
+    //   // 保存到空数组中
+    //   console.log('打印')
+    //   console.log(data)
+    //   console.log('打印')
+    // })
+    // lactationinfo((data) => {
+    //   // 保存到空数组中
+    //   console.log('data1')
+    //   console.log(data)
+    //   console.log('data2')
+    // })
+>>>>>>> 79422d2595ccc63a065a706197ded0a9d610dcbb
   },
   methods: {
     handleClick (tab, event) {

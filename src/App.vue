@@ -17,9 +17,8 @@ import navs from 'com/publicstyle/nav'
 import sidebar from 'com/publicstyle/sidebar'
 // 底部
 import foot from 'com/publicstyle/footer'
-// axios
-// import axios from 'axios'
-
+// 引入判断刷新是否登录
+import {loging} from 'api/request'
 export default {
   name: 'App',
   components: {
@@ -27,16 +26,10 @@ export default {
     banner,
     sidebar,
     foot
-  }// ,
-  // mounted () {
-  //   axios({
-  //     method: 'post',
-  //     url: '/api/EJZ/jsopnctiy_queryAllcity.action',
-  //     data: {}
-  //   }).then((res) => {
-  //     console.log(res)
-  //   })
-  // }
+  },
+  mounted () {
+    loging()
+  }
 }
 </script>
 <style lang="less" scoped>
