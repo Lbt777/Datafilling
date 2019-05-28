@@ -13,10 +13,10 @@ import qs from 'qs'
 /* 给methods一个默认值post */
 function sendaxios (methods = 'post', url, data = {}) {
   return new Promise((resolve, reject) => {
+    let requesturl = api + url + '?' + qs.stringify(data)
     axios({
       methods: methods,
-      url: api + url,
-      data: qs.stringify(data)
+      url: requesturl
     }).then((res) => {
       // 请求成功
       // eslint-disable-next-line eqeqeq

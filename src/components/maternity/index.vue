@@ -140,13 +140,13 @@
           <!--<p class="title-p">快速预约，准时服务</p>-->
         <!--</div>-->
         <!--<div class="process"><img srcset="./img/mon-nurse5.jpg"></div>-->
-        <div class="fenge-line03"></div>
-        <div class="title">
-          <h2>月嫂风采</h2>
-          <i></i>
-          <p>服务标准化，专业化</p>
-        </div>
       <div><img :src="api+yuersao"></div>
+      <div class="fenge-line03"></div>
+      <div class="title">
+        <h2>月嫂风采</h2>
+        <i></i>
+        <p>服务标准化，专业化</p>
+      </div>
         <ul>
           <li v-for="(nurse, index) in nurseinfos" :key="index">
             <div class="nurse-bg"><img class="nurse-bg-img" :src=" api+nurse.img"></div>
@@ -188,7 +188,8 @@
     </div>
   </div>
 </template>
-<script>import {api} from 'api/index'
+<script>
+import {api} from 'api/index'
 import {maternity, maternityinfo} from 'api/request'
 export default {
   data () {
@@ -196,8 +197,6 @@ export default {
       api,
       yuersao: [],
       nurseinfos: []
-
-
     }
   },
   mounted () {

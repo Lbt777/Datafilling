@@ -13,8 +13,7 @@
           <a href="#"><h6>{{nav.hname}}</h6></a>
           <a href="#"><p>{{nav.hdescribe}}</p></a>
           <a href="#/housesub">
-          <img class="btn-prev01" src="./img/index-icon-1.png">
-          <img class="btn-prev02" src="./img/index-icon-3-1.png">
+            <div class="btn-prev01"></div>
           </a>
           </div>
           </li>
@@ -128,9 +127,11 @@ export default {
     margin-bottom: 20px;
   }
 .btn-prev01{
-  display: inline-block;
-}
-.btn-prev02{
-  display: none;
+  width: 42px;
+  height: 42px;
+  background: url("./img/index-icon-1.png")no-repeat center;
+  &:hover{
+    background: url("./img/index-icon-3-1.png")no-repeat center;
+  }
 }
 </style>

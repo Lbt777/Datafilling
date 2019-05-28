@@ -201,6 +201,7 @@
         </div>
         <div><img src="./img/jzfw_img4.png"></div>
       </div>
+      <div class="fenge-line"></div>
       <div class="module04">
         <div class="module01-title">
           <span>
@@ -210,46 +211,65 @@
         </div>
         <div class="imames-bj">
           <ul>
-            <li>
+            <li v-for="(nsinfo, index) in nurseinfo" :key="index">
               <em>
-                <a><img src="http://www.51ejz.com/upimages/62d7324a-c495-4106-b0c4-ca6ea5bda59e.jpg"></a>
+                <a><img :src="api+nsinfo.img"></a>
               </em>
-              <span><b>赵家群|</b> 安徽</span>
-              <i>46岁&nbsp;10年工作经验</i>
+              <span><b>{{nsinfo.ename}}&nbsp;&nbsp;&nbsp;&nbsp;</b>{{nsinfo.enativeplace}}</span>
+              <i>{{nsinfo.eage}}岁&nbsp;{{nsinfo.eworkingage}}年工作经验</i>
             </li>
-            <li>
-              <em>
-                <a><img src="http://www.51ejz.com/upimages/62d7324a-c495-4106-b0c4-ca6ea5bda59e.jpg"></a>
-              </em>
-              <span><b>赵家群|</b> 安徽</span>
-              <i>46岁&nbsp;10年工作经验</i>
-            </li>
-            <li>
-              <em>
-                <a><img src="http://www.51ejz.com/upimages/62d7324a-c495-4106-b0c4-ca6ea5bda59e.jpg"></a>
-              </em>
-              <span><b>赵家群|</b> 安徽</span>
-              <i>46岁&nbsp;10年工作经验</i>
-            </li>
-            <li>
-              <em>
-                <a><img src="http://www.51ejz.com/upimages/62d7324a-c495-4106-b0c4-ca6ea5bda59e.jpg"></a>
-              </em>
-              <span><b>赵家群|</b> 安徽</span>
-              <i>46岁&nbsp;10年工作经验</i>
-            </li>
+            <!--<li>-->
+              <!--<em>-->
+                <!--<a><img src="http://www.51ejz.com/upimages/62d7324a-c495-4106-b0c4-ca6ea5bda59e.jpg"></a>-->
+              <!--</em>-->
+              <!--<span><b>赵家群|</b> 安徽</span>-->
+              <!--<i>46岁&nbsp;10年工作经验</i>-->
+            <!--</li>-->
+            <!--<li>-->
+              <!--<em>-->
+                <!--<a><img src="http://www.51ejz.com/upimages/62d7324a-c495-4106-b0c4-ca6ea5bda59e.jpg"></a>-->
+              <!--</em>-->
+              <!--<span><b>赵家群|</b> 安徽</span>-->
+              <!--<i>46岁&nbsp;10年工作经验</i>-->
+            <!--</li>-->
+            <!--<li>-->
+              <!--<em>-->
+                <!--<a><img src="http://www.51ejz.com/upimages/62d7324a-c495-4106-b0c4-ca6ea5bda59e.jpg"></a>-->
+              <!--</em>-->
+              <!--<span><b>赵家群|</b> 安徽</span>-->
+              <!--<i>46岁&nbsp;10年工作经验</i>-->
+            <!--</li>-->
           </ul>
         </div>
       </div>
     </div>
-    <div class="primary-right">
-      <div class="img01"><img class="" src="./img/right_img.jpg"></div>
-      <div class="img02"><img class="" src="./img/right_img2.jpg"></div>
-    </div>
+   <copyright/>
   </div>
 </template>
 <script>
+import copyright from 'com/publicstyle/copyright'
+import {api} from 'api/index'
+import {housekeepinfo} from 'api/request'
 export default {
+  components: {
+    copyright
+  },
+  data () {
+    return {
+      api,
+      nurseinfo: []
+    }
+  },
+  mounted () {
+    housekeepinfo((data) => {
+      // 保存到空数组中
+      console.log('打印1')
+      console.log(data)
+//      this.nurseinfo = data[0].data
+//      console.log(data[0].data)
+      console.log('打印2')
+    })
+  }
 }
 </script>
 <style lang="less" scoped>
@@ -452,7 +472,7 @@ export default {
     color: white;
   }
   .imames-bj {
-    padding: 51px 32px 51px;
+    padding: 0px 32px 51px;
   }
   .imames-bj em img {
     width: 161px;
@@ -466,10 +486,11 @@ export default {
     color: #666666;
     font-size: 16px;
     padding: 12px 0 7px;
+    text-align: center;
   }
   .imames-bj span b {
     color: #333333;
-    font-size: 20px;
+    //font-size: 20px;
     font-weight: normal;
   }
   .imames-bj  ul li i {
@@ -480,7 +501,9 @@ export default {
     overflow: hidden;
     white-space: nowrap;
     text-overflow: ellipsis;
+    text-align: center;
   } .imames-bj  ul li {
      margin-left: 50px;
+        margin-top: 60px;
     }
 </style>
