@@ -247,30 +247,44 @@
   </div>
 </template>
 <script>
-import copyright from 'com/publicstyle/copyright'
-import {api} from 'api/index'
-import {housekeepinfo} from 'api/request'
-export default {
-  components: {
-    copyright
-  },
-  data () {
-    return {
-      api,
-      nurseinfo: []
+  // 侧边
+  import copyright from 'com/publicstyle/copyright'
+  import {api} from 'api/index'
+  import {housekeepinfo} from 'api/request'
+  export default {
+    components: {
+      copyright
+    },
+    data () {
+      return {
+        api: api,
+        nurseinfo:[]
+      }
+    },
+    mounted () {
+      housekeepinfo((data) => {
+        // 保存到空数组中
+        console.log("1err1112")
+        console.log(data)
+        console.log("2222222ddd222221")
+      })
+    },
+    methods: {
+      handleScroll () {
+        var scrollTop = window.pageYOffset || document.documentElement.scrollTop || document.body.scrollTop
+        var offsetTop = document.querySelector('.primary-right').offsetTop
+        if (scrollTop <= 887) {
+          offsetTop = 887 - Number(scrollTop)
+          document.querySelector('.primary-right').style.top = offsetTop + 'px'
+        } else {
+          document.querySelector('.primary-right').style.top = '0px'
+        }
+      }
+    },
+    destroyed () {
+      window.removeEventListener('scroll', this.handleScroll)
     }
-  },
-  mounted () {
-    housekeepinfo((data) => {
-      // 保存到空数组中
-      console.log('打印1')
-      console.log(data)
-//      this.nurseinfo = data[0].data
-//      console.log(data[0].data)
-      console.log('打印2')
-    })
   }
-}
 </script>
 <style lang="less" scoped>
   @import "~static/css/common.less";

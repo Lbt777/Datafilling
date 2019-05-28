@@ -7,83 +7,14 @@
     <div class="parting-line"></div>
     <div class="primary">
       <ul class="serve clearfix">
-        <li>
+        <li v-for="(nav, index) in contens" :key="index">
           <div class="primary-dev primary-dev01">
-<<<<<<< HEAD
           <i></i>
           <a href="#"><h6>{{nav.hname}}</h6></a>
           <a href="#"><p>{{nav.hdescribe}}</p></a>
           <a href="#/housesub">
             <div class="btn-prev01"></div>
           </a>
-=======
-            <i></i>
-            <a href="#"><h6>日常保洁</h6></a>
-            <a href="#"><p>钟点工/小时工/清洁护理</p></a>
-            <a href="#">
-              <img class="btn-prev01" src="./img/index-icon-1.png">
-              <img class="btn-prev02" src="./img/index-icon-3-1.png">
-            </a>
->>>>>>> 79422d2595ccc63a065a706197ded0a9d610dcbb
-          </div>
-        </li>
-        <li>
-          <div class="primary-dev">
-            <i></i>
-            <a href="#"><h6>日常保洁</h6></a>
-            <a href="#"><p>钟点工/小时工/清洁护理</p></a>
-            <a href="#">
-              <img class="btn-prev01" src="./img/index-icon-1.png">
-              <img class="btn-prev02" src="./img/index-icon-3-1.png">
-            </a>
-          </div>
-        </li>
-      </ul>
-      <ul class="serve server-ul01 clearfix">
-        <li>
-          <div class="primary-dev">
-            <i></i>
-            <a href="#"><h6>日常保洁</h6></a>
-            <a href="#"><p>钟点工/小时工/清洁护理</p></a>
-            <a href="#">
-              <img class="btn-prev01" src="./img/index-icon-1.png">
-              <img class="btn-prev02" src="./img/index-icon-3-1.png">
-            </a>
-          </div>
-        </li>
-        <li>
-          <div class="primary-dev">
-            <i></i>
-            <a href="#"><h6>日常保洁</h6></a>
-            <a href="#"><p>钟点工/小时工/清洁护理</p></a>
-            <a href="#">
-              <img class="btn-prev01" src="./img/index-icon-1.png">
-              <img class="btn-prev02" src="./img/index-icon-3-1.png">
-            </a>
-          </div>
-        </li>
-      </ul>
-      <ul class="serve server-ul01 clearfix">
-        <li>
-          <div class="primary-dev">
-            <i></i>
-            <a href="#"><h6>日常保洁</h6></a>
-            <a href="#"><p>钟点工/小时工/清洁护理</p></a>
-            <a href="#">
-              <img class="btn-prev01" src="./img/index-icon-1.png">
-              <img class="btn-prev02" src="./img/index-icon-3-1.png">
-            </a>
-          </div>
-        </li>
-        <li>
-          <div class="primary-dev">
-            <i></i>
-            <a href="#"><h6>日常保洁</h6></a>
-            <a href="#"><p>钟点工/小时工/清洁护理</p></a>
-            <a href="#">
-              <img class="btn-prev01" src="./img/index-icon-1.png">
-              <img class="btn-prev02" src="./img/index-icon-3-1.png">
-            </a>
           </div>
         </li>
       </ul>
@@ -94,15 +25,41 @@
 <script>
 // 侧边
 import copyright from 'com/publicstyle/copyright'
+import {api} from 'api/index'
+import {housekeep} from 'api/request'
 export default {
   components: {
     copyright
   },
   data () {
     return {
-      // 创建空数组保存data
-      contentdes: []
+      api: api,
+      contens:[]
     }
+  },
+  mounted () {
+    housekeep((data) => {
+      // 保存到空数组中
+      console.log("1111111111112")
+      this.contens = data[0].data
+      console.log(this.contens)
+      console.log("2222222222221")
+    })
+  },
+  methods: {
+    handleScroll () {
+      var scrollTop = window.pageYOffset || document.documentElement.scrollTop || document.body.scrollTop
+      var offsetTop = document.querySelector('.primary-right').offsetTop
+      if (scrollTop <= 887) {
+        offsetTop = 887 - Number(scrollTop)
+        document.querySelector('.primary-right').style.top = offsetTop + 'px'
+      } else {
+        document.querySelector('.primary-right').style.top = '0px'
+      }
+    }
+  },
+  destroyed () {
+    window.removeEventListener('scroll', this.handleScroll)
   }
 }
 </script>
@@ -154,8 +111,11 @@ export default {
     }
   }
   .serve{
-    padding: 70px 0px 0px 0px;
+    padding: 0px 0px 0px 0px;
   }
+ .serve  li{
+   margin-top: 80px;
+ }
   .server-ul02{
     margin-top: 100px;
   }

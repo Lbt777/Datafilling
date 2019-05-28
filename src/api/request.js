@@ -25,10 +25,17 @@ let information = function (fn) {
     fn(res)
   })
 }
-<<<<<<< HEAD:src/api/request001.js
+let housekeep = function (fn) {
+  // 传入三个参数
+  sendaxios('post', 'House_query.action').then((res) => {
+    // 请求成功后调用回调函数
+    fn(res)
+    console.log('已调用回调函数fn')
+  })
+}
 let housekeepinfo = function (fn) {
   // 传入三个参数
-  sendaxios('post', 'jsopnemp_queryID.action?gen_id=1').then((res) => {
+  sendaxios('post', 'jsopnemp_queryID.action', {'gen_id': 1}).then((res) => {
     // 请求成功后调用回调函数
     fn(res)
     console.log('已调用回调函数fn')
@@ -36,9 +43,36 @@ let housekeepinfo = function (fn) {
 }
 let maternity = function (fn) {
   // 传入三个参数
-  //, {'yuesao_id': 1}
   sendaxios('post', 'PI_yuesaoServe.action', {'yuesao_id': 1}).then((res) => {
-=======
+    // 请求成功后调用回调函数
+    fn(res)
+    console.log('已调用回调函数fn')
+  })
+}
+let maternityinfo = function (fn) {
+  // 传入三个参数
+  sendaxios('post', 'PI_yuesaoEmp.action', {'employee_gid': 3}).then((res) => {
+    // 请求成功后调用回调函数
+    fn(res)
+    console.log('已调用回调函数fn')
+  })
+}
+let lactation = function (fn) {
+  // 传入三个参数
+  sendaxios('post', 'CUI_cuirushiServe.action', {'cuirushi_id': 1}).then((res) => {
+    // 请求成功后调用回调函数
+    fn(res)
+    console.log('已调用回调函数fn')
+  })
+}
+let lactationinfo = function (fn) {
+  // 传入三个参数
+  sendaxios('post', 'CUI_cuirushiEmp.action', {'employee_gid': 4}).then((res) => {
+    // 请求成功后调用回调函数
+    fn(res)
+    console.log('已调用回调函数fn')
+  })
+}
 // 首页家政服务类型
 let service = function (fn) {
   // 传入三个参数
@@ -50,22 +84,16 @@ let service = function (fn) {
 let characteristic = function (fn) {
   // 传入三个参数
   sendaxios('post', 'jsopnhouse_query.action').then((res) => {
->>>>>>> 79422d2595ccc63a065a706197ded0a9d610dcbb:src/api/request.js
     // 请求成功后调用回调函数
     fn(res)
   })
 }
-<<<<<<< HEAD:src/api/request001.js
 
-let maternityinfo = function (fn) {
-  // 传入三个参数{'employee_gid': 3}
-  sendaxios('post', 'PI_yuesaoEmp.action?employee_gid=3', {'employee_gid': 3}).then((res) => {
-=======
+
 // 首页我们的优势
 let adv = function (fn) {
   // 传入三个参数
   sendaxios('post', 'jsopnadv_query.action').then((res) => {
->>>>>>> 79422d2595ccc63a065a706197ded0a9d610dcbb:src/api/request.js
     // 请求成功后调用回调函数
     fn(res)
   })
@@ -73,16 +101,8 @@ let adv = function (fn) {
 // 保姆
 let nanny = function (data, fn) {
   // 传入三个参数
-<<<<<<< HEAD:src/api/request002.js
   sendaxios('post', 'frnanny_Content.action', data).then((res) => {
-=======
-<<<<<<< HEAD:src/api/request001.js
   // {'cuirushi_id': 1}
-  sendaxios('post', 'CUI_cuirushiServe.action', {'cuirushi_id': 1}).then((res) => {
-=======
-  sendaxios('post', 'frnanny_Content.action?nanny_id=1').then((res) => {
->>>>>>> 79422d2595ccc63a065a706197ded0a9d610dcbb:src/api/request.js
->>>>>>> 25b6a10f99fc5e056cbe86fb3c67d746cb88db6e:src/api/request001.js
     // 请求成功后调用回调函数
     fn(res)
     console.log('已调用回调函数fn')
@@ -91,15 +111,7 @@ let nanny = function (data, fn) {
 // 育儿嫂
 let parenting = function (data, fn) {
   // 传入三个参数
-<<<<<<< HEAD:src/api/request002.js
   sendaxios('post', 'reyuersao_Content.action', data).then((res) => {
-=======
-<<<<<<< HEAD:src/api/request001.js
-  sendaxios('post', 'CUI_cuirushiEmp.action', {'employee_gid': 4}).then((res) => {
-=======
-  sendaxios('post', 'reyuersao_Content.action?yuersao_id=2').then((res) => {
->>>>>>> 79422d2595ccc63a065a706197ded0a9d610dcbb:src/api/request.js
->>>>>>> 25b6a10f99fc5e056cbe86fb3c67d746cb88db6e:src/api/request001.js
     // 请求成功后调用回调函数
     fn(res)
     console.log('已调用回调函数fn')
@@ -148,12 +160,6 @@ function loging () {
   console.log(store.state)
 }
 // 导出postlist方法
-<<<<<<< HEAD:src/api/request002.js
-export {nav, postlist, information, service, characteristic, adv, sendphone, register, denglu, nanny, parenting, loging, cxlist}
-=======
-<<<<<<< HEAD:src/api/request001.js
-export {postlist, housekeep, housekeepinfo, maternity, maternityinfo, lactation, lactationinfo}
-=======
-export {nav, postlist, information, service, characteristic, adv, sendphone, register, denglu, nanny, parenting, loging}
->>>>>>> 79422d2595ccc63a065a706197ded0a9d610dcbb:src/api/request.js
->>>>>>> 25b6a10f99fc5e056cbe86fb3c67d746cb88db6e:src/api/request001.js
+export {nav, postlist, information, loging,housekeep,
+  housekeepinfo, service, characteristic,
+  maternity, maternityinfo, adv, sendphone, register, denglu, nanny, parenting, cxlist}

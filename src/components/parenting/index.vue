@@ -205,7 +205,6 @@ import {parenting} from 'api/request'
 export default {
   data () {
     return {
-      img: '',
       api: api
     }
   },
