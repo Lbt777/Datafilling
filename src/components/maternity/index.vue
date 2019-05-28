@@ -1,7 +1,6 @@
 <template>
   <div class="container clearfix">
     <div class="primary">
-<<<<<<< HEAD
       <!--<div class="month-nurse-module01 clearfix">-->
         <!--<ul>-->
           <!--<li class="li1">-->
@@ -148,7 +147,6 @@
         <i></i>
         <p>服务标准化，专业化</p>
       </div>
-=======
       <div class="month-nurse-module01 clearfix">
         <ul>
           <li class="li1">
@@ -294,7 +292,6 @@
           <i></i>
           <p>服务标准化，专业化</p>
         </div>
->>>>>>> 79422d2595ccc63a065a706197ded0a9d610dcbb
         <ul>
           <li>
             <div class="nurse-bg"><img class="nurse-bg-img" src="./img/nurse-person01.png"></div>
@@ -335,14 +332,10 @@
     </div>
   </div>
 </template>
-<<<<<<< HEAD
 <script>
 import {api} from 'api/index'
-import {maternity, maternityinfo} from 'api/request'
-=======
-<script>import {api} from 'api/index'
+//import {maternity, maternityinfo} from 'api/request'
 // import {maternity, maternityinfo} from 'api/request'
->>>>>>> 79422d2595ccc63a065a706197ded0a9d610dcbb
 export default {
   data () {
     return {

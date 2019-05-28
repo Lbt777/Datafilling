@@ -2,7 +2,6 @@
   <div>
     <div class="personal-b-r-t">
       <p class="font-16">基本信息</p>
-
       <el-form :model="ruleForm" :rules="rules" ref="ruleForm"  class="demo-ruleForm">
         <el-form-item label="手机号" prop="phone">
           <el-input v-model.number="ruleForm.phone"/>
