@@ -41,8 +41,6 @@ import personaltab2 from 'com/publicstyle/personaltab/personaltab2'
 import personaltab3 from 'com/publicstyle/personaltab/personaltab3'
 // 个人中心页面tab4
 import personaltab4 from 'com/publicstyle/personaltab/personaltab4'
-// 个人中心页面tab5
-import personaltab5 from 'com/publicstyle/personaltab/personaltab5'
 // 在线预约页面
 import subscribe from 'com/subscribe'
 // 在线预约子路由页面1
@@ -297,20 +295,6 @@ export default new Router({
             default: personaltab4,
             personaltab2: personaltab4
           }
-        },
-        {
-          path: '',
-          components: {
-            default: personaltab5,
-            personaltab2: personaltab5
-          }
-        },
-        {
-          path: '/personaltab5',
-          components: {
-            default: personaltab5,
-            personaltab2: personaltab5
-          }
         }
       ],
       // 原信息 存储信息的
@@ -369,7 +353,7 @@ export default new Router({
           beforeEnter: (to, from, next) => {
             // 已登录 不能再进行登录
             var token = window.localStorage.getItem('token')
-            if (token) {
+            if (token === false) {
               next('/')
             } else {
               next()

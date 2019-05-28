@@ -49,18 +49,18 @@ let adv = function (fn) {
   })
 }
 // 保姆
-let nanny = function (fn) {
+let nanny = function (data, fn) {
   // 传入三个参数
-  sendaxios('post', 'frnanny_Content.action?nanny_id=1').then((res) => {
+  sendaxios('post', 'frnanny_Content.action', data).then((res) => {
     // 请求成功后调用回调函数
     fn(res)
     console.log('已调用回调函数fn')
   })
 }
 // 育儿嫂
-let parenting = function (fn) {
+let parenting = function (data, fn) {
   // 传入三个参数
-  sendaxios('post', 'reyuersao_Content.action?yuersao_id=2').then((res) => {
+  sendaxios('post', 'reyuersao_Content.action', data).then((res) => {
     // 请求成功后调用回调函数
     fn(res)
     console.log('已调用回调函数fn')
@@ -88,6 +88,14 @@ let denglu = function (data, fn) {
     fn(res)
   })
 }
+// 查询订单列表
+let cxlist = function (data, fn) {
+  // 传入三个参数
+  sendaxios('post', 'jsopnord_queryOrder', data).then((res) => {
+    fn(res)
+  })
+}
+
 // 刷新判断是否登录
 function loging () {
   // 1.请求后台判断是否登录
@@ -101,4 +109,4 @@ function loging () {
   console.log(store.state)
 }
 // 导出postlist方法
-export {nav, postlist, information, service, characteristic, adv, sendphone, register, denglu, nanny, parenting, loging}
+export {nav, postlist, information, service, characteristic, adv, sendphone, register, denglu, nanny, parenting, loging, cxlist}

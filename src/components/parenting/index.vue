@@ -201,7 +201,7 @@
 </template>
 <script>
 import {api} from 'api/index'
-// import {parenting} from 'api/request'
+import {parenting} from 'api/request'
 export default {
   data () {
     return {
@@ -212,12 +212,14 @@ export default {
   mounted () {
     window.addEventListener('scroll', this.handleScroll)
     // 获取城市数据
-    // parenting((data) => {
-    //   // 保存到空数组中
-    //   // console.log(data)
-    //   this.img = data.paddress
-    //   console.log()
-    // })
+    parenting({
+      yuersao_id: 1
+    }, (data) => {
+    // 保存到空数组中
+      console.log(data)
+      this.img = data.paddress
+      //       console.log(this.img)
+    })
   },
   methods: {
     handleScroll () {
