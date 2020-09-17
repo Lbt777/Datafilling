@@ -5,7 +5,7 @@
             <ul>
                 <li>
                     <router-link to="/subscribetab1">
-                        <el-button type="danger" plain>临时工1</el-button>
+                        <el-button type="danger" plain>临时大地方工1</el-button>
                     </router-link>
                 </li>
                 <li>
